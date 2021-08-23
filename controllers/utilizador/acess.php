@@ -33,7 +33,7 @@ if(isset($_POST['email_utilizador'])){
               })
               .then(function() {
                   //Redirecionando o usuario
-                window.location.href = "../../login.php";
+                window.location.href = "../../index.php";
               })
               
             });
@@ -41,10 +41,10 @@ if(isset($_POST['email_utilizador'])){
             </script>
             ';
                 /*?>
-                <div class="msg-erro">
-                    Email e/ou Senha invalidos!
-                </div>
-                <?php*/
+<div class="msg-erro">
+    Email e/ou Senha invalidos!
+</div>
+<?php*/
             }
         }else{
             echo '<head>';
@@ -68,7 +68,7 @@ if(isset($_POST['email_utilizador'])){
                 
               }).then(function() {
                   //Redirecionando o usuario
-                window.location.href = "../../login.php";
+                window.location.href = "../../index.php";
               })
               
             });
@@ -98,7 +98,7 @@ if(isset($_POST['email_utilizador'])){
                 
               }).then(function() {
                   //Redirecionando o usuario
-                window.location.href = "../../login.php";
+                window.location.href = "../../index.php";
               })
               
             });
@@ -106,10 +106,10 @@ if(isset($_POST['email_utilizador'])){
             </script>
             ';
         /*?>
-        <div class="msg-erro">
-            Preencha todos so Campos
-        </div>
-        <?php*/
+<div class="msg-erro">
+    Preencha todos so Campos
+</div>
+<?php*/
     }
 }
 ?>

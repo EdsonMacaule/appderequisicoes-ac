@@ -10,7 +10,7 @@ if (!isset($_SESSION['id_usuario'])) {
     // Destrói a sessão por segurança
     session_destroy();
     // Redireciona o visitante de volta pro login
-    header("Location: ../../login.php"); exit;
+    header("Location: ../../index.php"); exit;
 }
 ?>
 <!DOCTYPE html>
@@ -196,7 +196,8 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <div class="inner" style=" border-radius: 5px;">
                                     <?php $id_utilizador=$_SESSION['id_usuario'];  $result= $u->pedidos_pedentes_usuario($id_utilizador); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm;text-align: center;">
-                                        <strong><?php  echo $result['Pedidos_Pedentes']; ?></strong></h3>
+                                        <strong><?php  echo $result['Pedidos_Pedentes']; ?></strong>
+                                    </h3>
                                     <p style="color: whitesmoke; padding: 0.5mm; font-size: 12pt; text-align: center;">
                                         Requisições Pedentes</p>
                                     &nbsp;&nbsp;
@@ -220,7 +221,8 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $id_utilizador=$_SESSION['id_usuario'];  $result= $u->reviw_older_user($id_utilizador); ?>
                                     <h3 style="color: black; padding: 0.5mm; padding-top: 3mm; text-align: center;">
-                                        <strong><?php  echo $result['Pedidos_EM_Revisao']; ?></strong></h3>
+                                        <strong><?php  echo $result['Pedidos_EM_Revisao']; ?></strong>
+                                    </h3>
                                     <p style="color: black; padding: 0.5mm; font-size: 12pt; text-align: center;">
                                         Requisições em Revisão</p>
                                     &nbsp;&nbsp;
@@ -243,7 +245,8 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $id_utilizador=$_SESSION['id_usuario'];  $result= $u->older_user_aprov($id_utilizador); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm; text-align: center;">
-                                        <strong><?php  echo $result['Pedidos_Aprovados']; ?></strong></h3>
+                                        <strong><?php  echo $result['Pedidos_Aprovados']; ?></strong>
+                                    </h3>
                                     <p style="color: whitesmoke; padding: 0.5mm;font-size: 12pt; text-align: center;">
                                         Requisições Aprovadas</p>
                                     &nbsp;&nbsp;
@@ -266,7 +269,8 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $id_utilizador=$_SESSION['id_usuario'];  $result= $u->older_user_done($id_utilizador); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm; text-align: center;">
-                                        <strong><?php  echo $result['Pedidos_Feitos']; ?></strong></h3>
+                                        <strong><?php  echo $result['Pedidos_Feitos']; ?></strong>
+                                    </h3>
                                     <p style="color: whitesmoke; padding: 0.5mm; font-size: 12pt; text-align: center;">
                                         Requisições Finalizadas</p>
                                     &nbsp;&nbsp;
@@ -296,7 +300,7 @@ if (!isset($_SESSION['id_usuario'])) {
         <div class="col-lg-12" style="display: flex;">
             <div class="col-lg-8" style="margin-left: 18%;">
                 <button type="submit" name="btn" class="btn btn-primary btn-lg btn-block"
-                    onclick="location.href='index.php#RequestModal'" style="border-radius: 10px;" data-toggle="modal"
+                    onclick="location.href='admin.php#RequestModal'" style="border-radius: 10px;" data-toggle="modal"
                     data-target="#RequestModal">Nova Requisição</button>
             </div>
         </div>
@@ -395,7 +399,7 @@ if (!isset($_SESSION['id_usuario'])) {
                         $('.alert-success').show();
                         $('.alert-error').hide();
                         // alert('Requisição submetida com Sucesso!')
-                        location.href = "index.php";
+                        location.href = "admin.php";
                     }
 
                 });

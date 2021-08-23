@@ -173,7 +173,8 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <div class="inner" style=" border-radius: 5px;">
                                     <?php $result= $u->allrequest_pedind(); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm;text-align: center;">
-                                        <strong><?php  echo $result['Pedidos_Pedentes']; ?></strong></h3>
+                                        <strong><?php  echo $result['Pedidos_Pedentes']; ?></strong>
+                                    </h3>
                                     <p style="color: whitesmoke; padding: 0.5mm; font-size: 12pt; text-align: center;">
                                         Requisições Pedentes</p>
                                     &nbsp;&nbsp;
@@ -197,7 +198,8 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $result= $u->allrequest_review(); ?>
                                     <h3 style="color: black; padding: 0.5mm; padding-top: 3mm; text-align: center;">
-                                        <strong><?php  echo $result['Pedidos_EM_Revisao']; ?></strong></h3>
+                                        <strong><?php  echo $result['Pedidos_EM_Revisao']; ?></strong>
+                                    </h3>
                                     <p style="color: black; padding: 0.5mm; font-size: 12pt; text-align: center;">
                                         Requisições em Revisão</p>
                                     &nbsp;&nbsp;
@@ -220,7 +222,8 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $result= $u->allrequest_aprov(); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm; text-align: center;">
-                                        <strong><?php  echo $result['Pedidos_Aprovados']; ?></strong></h3>
+                                        <strong><?php  echo $result['Pedidos_Aprovados']; ?></strong>
+                                    </h3>
                                     <p style="color: whitesmoke; padding: 0.5mm;font-size: 12pt; text-align: center;">
                                         Requisições Aprovadas</p>
                                     &nbsp;&nbsp;
@@ -243,7 +246,8 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $result= $u->allrequest_done(); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm; text-align: center;">
-                                        <strong><?php  echo $result['Pedidos_Feitos']; ?></strong></h3>
+                                        <strong><?php  echo $result['Pedidos_Feitos']; ?></strong>
+                                    </h3>
                                     <p style="color: whitesmoke; padding: 0.5mm; font-size: 12pt; text-align: center;">
                                         Requisições Finalizadas</p>
                                     &nbsp;&nbsp;
