@@ -59,6 +59,17 @@ if (!isset($_SESSION['id_usuario'])) {
         height: 92%;
         overflow: hidden;
     }
+    div#outside{
+        float: right;
+    }
+    div#outside a {
+        margin-left: 90%;
+        font-size: 16px;
+    }
+    div.container p {
+        /*font-size: 9pt;*/
+        text-align: center;
+    }
 
     @media screen and (max-width: 414px) {
         div.container {
@@ -88,6 +99,9 @@ if (!isset($_SESSION['id_usuario'])) {
 
         div#RequestModal {
             height: 100%;
+        }
+        div#outside a {
+            font-size: 14px;
         }
 
     }
@@ -173,13 +187,12 @@ if (!isset($_SESSION['id_usuario'])) {
     <!--End Modal submit Request-->
     <div class="container" style="background-color: whitesmoke; height: auto;">
         <br>
-        <h2 class="center-text col-lg-pull-0" style="margin-top: 5%;">Bem-vindo ao Sistema de Gestão de Requisições
-            Usuario</h2>
+        <h2 class="center-text col-lg-pull-0" style="margin-top: 5%;">Bem-vindo ao Sistema de Gestão de Requisições - Usuário</h2>
         <br>
         <p style="text-transform: uppercase; font-weight: bold;">Olá, <?php echo $_SESSION['nome_usuario']; ?>, Nesta
             Janela tem todas suas requisições!</p>
         <!--Informando o nome do usuário logo que acessa o sistema-->
-        <div class="col-md-5">
+        <div class="col-md-5" id="outside">
             <a href="home.php" style="font-size: 12pt;">Voltar</a>
         </div>
         <!--    --><?php //echo $_SESSION['id_usuario']; ?>

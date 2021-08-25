@@ -65,6 +65,17 @@ if (!isset($_SESSION['id_usuario'])) {
         overflow: hidden;
 
     }
+    div#outside{
+        float: right;
+    }
+    div#outside a {
+        margin-left: 90%;
+        font-size: 16px;
+    }
+    div.container p {
+        /*font-size: 9pt;*/
+        text-align: center;
+    }
 
     @media screen and (max-width: 414px) {
         div.container {
@@ -90,6 +101,9 @@ if (!isset($_SESSION['id_usuario'])) {
 
         div.col-lg-12 table {
             width: auto;
+        }
+        div#outside a {
+           font-size: 14px;
         }
 
     }
@@ -168,8 +182,8 @@ if (!isset($_SESSION['id_usuario'])) {
         <p style="text-transform: uppercase; font-weight: bold;">Olá, <?php echo $_SESSION['nome_usuario']; ?>, esta
             janela reflete a todas Requisições feitas a nivel do sistema!</p>
         <!--Informando o nome do usuário logo que acessa o sistema-->
-        <div class="col-md-5">
-            <a href="../../logout.php">Sair</a>
+        <div class="col-md-5" id="outside">
+            <strong><a href="../../logout.php">Sair</a></strong>
         </div>
         <br><br><br>
         <div class="content-wrapper">
@@ -287,7 +301,7 @@ if (!isset($_SESSION['id_usuario'])) {
             <!--    <div class="col-lg-8">-->
             <!--        <button type="submit" name="btn challenge" class="btn btn-primary btn-lg btn-block" onclick="location.href='requisicoes/requisicao.php'" style="border-radius: 10px;">Nova Requisição</button>-->
             <!--    </div>-->
-            <div class="col-lg-8" style="margin-left: 18%;">
+            <div class="col-lg-8" id="requestmaster" style="margin-left: 18%;">
                 <button type="submit" name="btn challenge" class="btn btn-primary btn-lg btn-block"
                     onclick="location.href='admin.php'">Suas Requisições</button>
             </div>
