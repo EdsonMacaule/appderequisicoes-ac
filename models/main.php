@@ -221,11 +221,12 @@ return false; //nao foi possivel fazer o login
     }
 
     //actualizar estado da requisicao
-    public  function request_update($id_estado, $id_pedido){
+    public  function request_update($id_estado,$id_prioridade ,$id_pedido){
         $this->conectar();
         global $pdo;
-        $sql=$pdo->prepare("UPDATE tb_pedido SET id_estado = :et, update_data = CURRENT_TIMESTAMP WHERE tb_pedido.id_pedido = :pd;");
+        $sql=$pdo->prepare("UPDATE tb_pedido SET id_estado = :et, id_prioridade = :pri, update_data = CURRENT_TIMESTAMP WHERE tb_pedido.id_pedido = :pd;");
         $sql->bindValue(":et",$id_estado,PDO::PARAM_INT);
+        $sql->bindValue(":pri",$id_prioridade,PDO::PARAM_INT);
         $sql->bindValue(":pd",$id_pedido,PDO::PARAM_INT);
         $sql->execute();
 
@@ -240,6 +241,16 @@ return false; //nao foi possivel fazer o login
         $sql->execute();
         $dados=$sql->FetchAll();
         return $dados;
+    }
+
+    //pegando a prioridade
+    public function prioridade(){
+        $this->conectar();
+        global $pdo;
+        $sql=$pdo->prepare("SELECT * FROM tb_prioridade");
+        $sql->execute();
+        $resultado=$sql->FetchAll();
+        return $resultado;
     }
 
 //    public function studety(){

@@ -2,7 +2,7 @@
 require_once "../../models/main.php";
 $u = new Usuario;
 
-if (isset($_POST['nome_utilizador'])){
+if (isset($_POST['adicionar'])){
 $nome_utilizador = $_POST['nome_utilizador'];
 $email_utilizador = $_POST['email_utilizador'];
 $id_cargo = $_POST['cargo'];

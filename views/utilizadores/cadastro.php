@@ -64,9 +64,7 @@ $u = new Usuario;
                 <br>
                 <form method="POST" action="../../controllers/utilizador/register.php">
                     <div class="form-group">
-
                         <input class="form-control" type="name" placeholder="Nome Completo" name="nome_utilizador">
-
                     </div>
                     <div class="form-group">
 

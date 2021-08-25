@@ -61,7 +61,7 @@ if (!isset($_SESSION['id_usuario'])) {
     }
 
     div#statusModal {
-        height: 52%;
+        height: 55%;
         overflow: hidden;
 
     }
@@ -111,7 +111,7 @@ if (!isset($_SESSION['id_usuario'])) {
                             <input type="text" class="pedido" name="pedido_id" id="pedido_id" value="" disabled>
                         </div>
 
-                        <div class="form-group">
+                        <div class="form-group" style="display: none;">
                             <?php $result = $u->status_request(); ?>
                             <select name="estado_id" id="estado_id" class="form-control" disabled>
                                 <?php foreach ($result as $row): ?>
@@ -120,8 +120,19 @@ if (!isset($_SESSION['id_usuario'])) {
                                 </option>
                                 <?php endforeach; ?>
                             </select>
-                            <!--                        <input type="text" class="form-control" name="estado" id="estado" value=""  disabled >-->
                         </div>
+                            <div class="form-group">
+                                <label for="">Prioridade</label>
+                                <?php $result = $u->prioridade(); ?>
+                                <select name="prioridade_id" id="prioridade_id" class="form-control">
+                                    <?php foreach ($result as $row): ?>
+                                    <option value="<?php echo $row["id_prioridade"]; ?>">
+                                        <?php echo  ($row["nome_prioridade"] == 1 ? 'Baixa' : ($row["nome_prioridade"] == 2 ? 'Media' : 'Alta'));?>
+                                    </option>
+                                    <?php endforeach; ?>
+                                </select>
+                            </div>
+                            <!--                        <input type="text" class="form-control" name="estado" id="estado" value=""  disabled >-->
                         <div class="form-group">
                             <label for="">Escolha o estado</label>
                             <?php $result = $u->status_request(); ?>
@@ -179,7 +190,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                         Requisições Pedentes</p>
                                     &nbsp;&nbsp;
                                 </div>
-                                <div class="icon" style="background-color: #3390B6;border-radius: 5px; padding: 1mm; ">
+                                <div class="icon" style="background-color: #B82923;border-radius: 5px; padding: 1mm; ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle" viewBox="0 0 16 16"
                                         style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
@@ -204,7 +215,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                         Requisições em Revisão</p>
                                     &nbsp;&nbsp;
                                 </div>
-                                <div class="icon" style=" background-color: #32C441; border-radius: 5px ;padding: 1mm;">
+                                <div class="icon" style=" background-color: #D3E625; border-radius: 5px ;padding: 1mm;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle-half" viewBox="0 0 16 16"
                                         style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
@@ -228,7 +239,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                         Requisições Aprovadas</p>
                                     &nbsp;&nbsp;
                                 </div>
-                                <div class="icon" style=" background-color: #D3E625; border-radius: 5px ;padding: 1mm;">
+                                <div class="icon" style=" background-color: #32C441; border-radius: 5px ;padding: 1mm;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle-fill" viewBox="0 0 16 16"
                                         style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
@@ -252,7 +263,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                         Requisições Finalizadas</p>
                                     &nbsp;&nbsp;
                                 </div>
-                                <div class="icon" style="background-color: #B82923;border-radius: 5px;padding: 1mm;">
+                                <div class="icon" style="background-color: #3390B6;border-radius: 5px;padding: 1mm;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-check2-all" viewBox="0 0 16 16"
                                         style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
@@ -278,7 +289,7 @@ if (!isset($_SESSION['id_usuario'])) {
             <!--    </div>-->
             <div class="col-lg-8" style="margin-left: 18%;">
                 <button type="submit" name="btn challenge" class="btn btn-primary btn-lg btn-block"
-                    onclick="location.href='index.php'">Suas Requisições</button>
+                    onclick="location.href='admin.php'">Suas Requisições</button>
             </div>
         </div>
         <br><br><br><br>
@@ -287,9 +298,9 @@ if (!isset($_SESSION['id_usuario'])) {
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th>Descrição </th>
-                        <th>Remetente</th>
-                        <th>Departamento</th>
+                        <th style="text-align: left;" >Descrição </th>
+                        <th style="text-align: left;" >Remetente</th>
+                        <th style="text-align: left;" >Departamento</th>
                         <th>Estado</th>
                         <th>Action</th>
                         <th>Prioridade</th>
@@ -302,17 +313,34 @@ if (!isset($_SESSION['id_usuario'])) {
                     <?php $con=1; foreach ($result as $row): ?>
                     <tr>
                         <th scope="row"><?php echo $con; ?></th>
-                        <td><?php echo $row["descricao_pedido"]; ?></td>
-                        <td><?php echo $row["nome_utilizador"]; ?></td>
-                        <td><?php echo $row["nome_departamento"]; ?></td>
-                        <td><button
-                                class="btn btn-info"><?php echo ($row["nome_estado"]==1 ? 'Pedente' : ($row["nome_estado"]==2 ?'Em Revisão' : ($row["nome_estado"]==3 ?'Aprovado' : 'Feito'))); ?>
-                        </td></button>
-                        <td style=""> <a href="home.php#statusModal" id_pedido="<?php echo $row["id_pedido"]; ?>"
-                                nome_estado="<?php echo  $row["nome_estado"];?>" class="badge badge-info edit_btn "
-                                data-toggle="modal" data-target="#statusModal">Editar</a>
-                        <td><button type="button" class="btn btn-info"
-                                disabled><?php echo ($row["nome_prioridade"] == 1 ? 'Baixa' : ($row["nome_prioridade"] == 2 ? 'Media' : 'Alta')); ?></button>
+                        <td style="text-align: left;"><?php echo $row["descricao_pedido"]; ?></td>
+                        <td style="text-align: left;" ><?php echo $row["nome_utilizador"]; ?></td>
+                        <td style="text-align: left;" ><?php echo $row["nome_departamento"]; ?></td>
+                        <td  ><?php echo ($row["nome_estado"]==1 ? '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                        class="bi bi-circle" viewBox="0 0 16 16"
+                                        style="margin-left: 20px; padding-top: 5px;" color="#B82923">
+                                        <path
+                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                    </svg>' : ($row["nome_estado"]==2 ?'<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                        class="bi bi-circle-half" viewBox="0 0 16 16"
+                                        style="margin-left: 20px; padding-top: 5px;" color="#D3E625">
+                                        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+                                    </svg>' : ($row["nome_estado"]==3 ?'<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                        class="bi bi-circle-fill" viewBox="0 0 16 16"
+                                        style="margin-left: 20px; padding-top: 5px;" color="#32C441">
+                                        <circle cx="8" cy="8" r="8" />
+                                    </svg>' : '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                                        class="bi bi-check2-all" viewBox="0 0 16 16"
+                                        style="margin-left: 20px; padding-top: 5px;" color="#3390B6">
+                                        <path
+                                            d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z" />
+                                        <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z" />
+                                    </svg>'))); ?>
+                        </td>
+                        <td style=""><button class="btn btn-success"><a href="home.php#statusModal" id_pedido="<?php echo $row["id_pedido"]; ?>"
+                                nome_estado="<?php echo  $row["nome_estado"];?>" prioridade="<?php echo $row["nome_prioridade"]; ?>" class="badge badge-info edit_btn "
+                                data-toggle="modal" data-target="#statusModal" style="font-size: 14px;" >Editar</a></button>
+                        <td><?php echo ($row["nome_prioridade"] == 1 ? '<button class=" btn btn-success"  >Baixa</button>' : ($row["nome_prioridade"] == 2 ? '<button class="btn btn-primary" >Media</button>' : '<button class="btn btn-danger" >Alta</button>')); ?>
                         </td>
                         <td><?php echo $row["data_pedido"]; ?></td>
                         <td><?php echo $row["update_data"]; ?></td>
@@ -321,10 +349,8 @@ if (!isset($_SESSION['id_usuario'])) {
                     <?php $con++; endforeach;?>
                 </tbody>
             </table>
+            <br><br>
         </div>
-        <!-- Chamando a tela de usuario -->
-        <!--    <a href="users.php" class="small-box-footer">Usuario</a>-->
-        <!-- Fim da chamada -->
     </div>
 
     <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
@@ -353,10 +379,12 @@ if (!isset($_SESSION['id_usuario'])) {
 
             var pedidos = $(this).attr('id_pedido');
             var dados = $(this).attr('nome_estado');
+            var prio = $(this).attr('prioridade');
 
             document.getElementById("pedido_id").value = pedidos;
             document.getElementById("update_estado").value = dados;
             document.getElementById("estado_id").value = dados;
+            document.getElementById("prioridade_id").value = prio;
 
 
         });
@@ -367,6 +395,7 @@ if (!isset($_SESSION['id_usuario'])) {
             var estado = $('#update_estado').val();
             var pedido = $('#pedido_id').val();
             var last_status = $('#estado_id').val();
+            var prioridade = $('#prioridade_id').val();
             // alert(pedido);
 
             if (estado != last_status) {
@@ -378,6 +407,7 @@ if (!isset($_SESSION['id_usuario'])) {
                     data: {
                         'update_form': true,
                         update_estado: estado,
+                        id_prioridade: prioridade,
                         pedido_id: pedido,
                     },
                     success: function(data) {
