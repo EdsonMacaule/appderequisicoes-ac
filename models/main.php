@@ -62,7 +62,7 @@ return false; //nao foi possivel fazer o login
     public function adicionar_usuario($nome_utilizador,$email_utilizador,$id_cargo,$perfil_utilizador,$senha_utilizador){
         $this->conectar();
         global $pdo;
-        $sql = $pdo->prepare("SELECT id_utilizador FROM tb_utilizadores WHERE email_utilizador = :e");
+        $sql = $pdo->prepare("SELECT id_utilizador,email_utilizador  FROM tb_utilizadores WHERE email_utilizador = :e");
         $sql->bindValue(":e",$email_utilizador);
         $sql->execute();
         if ($sql -> rowcount() >0 ){
@@ -90,16 +90,14 @@ return false; //nao foi possivel fazer o login
         return $result;
     }
     //selecionar nome
-//    public function remete($id_utilizador){
-//        $this->conectar();
-//        global $pdo;
-//        $id_usuario=$_GET["$id_utilizador"];
-//        $sql = $pdo->prepare("SELECT id_utilizador, email_utilizador FROM `tb_utilizadores` WHERE id_utilizador=1");
-//        $sql->bindValue(":u",$id_usuario);
-//        $sql->execute();
-//        $result = $sql->fetc();
-//        return $result;
-//    }
+    public function email_usuario(){
+        $this->conectar();
+        global $pdo;
+        $sql = $pdo->prepare("SELECT email_utilizador FROM tb_utilizadores");
+        $sql->execute();
+        $result = $sql->fetchAll();
+        return $result;
+    }
     //selecionar departamento
     public function departamento(){
         $this->conectar();

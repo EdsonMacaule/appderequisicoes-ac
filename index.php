@@ -45,6 +45,7 @@ $u=new Usuario;
         height: 65%;
         overflow: hidden;
     }
+
     @media screen and (max-width: 414px){
         div.row.login-container.column-seperation{
             padding-top: 50%;
@@ -76,6 +77,14 @@ $u=new Usuario;
                         <input class="form-control" type="email" placeholder="Escreva seu email" id="email_utilizador" name="email_utilizador">
 
                     </div>
+                    <div class="form-group" style="display: none;">
+                        <?php $result= $u->email_usuario(); ?>
+                        <select name="email_user" id="email_user" class="form-control">
+                            <?php foreach ($result as $row): ?>
+                            <option value="<?php echo $row["email_utilizador"];?>"></option>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
 
                     <div class="form-group">
                         <?php $result = $u->cargo(); ?>
@@ -97,7 +106,7 @@ $u=new Usuario;
 
                     </div>
                 </div>
-                <div class="alert alert-error hide">Erro de registo, verifique se todos campos estão devidamente preenchidos!</div>
+                <div class="alert alert-error hide">Erro de registo, verifique se todos campos estão devidamente preenchidos ou o email ja esteja cadastrado!</div>
                 <div class="alert alert-success hide">Seu Registo foi submetido com sucesso</div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -183,8 +192,9 @@ $u=new Usuario;
             var utilizador_cargo = $('#cargo').val();
             var utilizador_perfil = $('#perfil_utilizador').val();
             var utilizador_senha = $('#senha_utilizador').val();
+            var email_user = $('#email_user').val();
             // alert(pedido_nome);
-            if (utilizador_nome == "" || utilizador_email=="" || utilizador_cargo=="" || utilizador_perfil=="" || utilizador_senha=="" ) {
+            if (utilizador_nome == "" || utilizador_email==email_user || utilizador_cargo=="" || utilizador_perfil=="" || utilizador_senha=="" ) {
                 $('.alert-error').show();
             } else {
                 $.ajax({
