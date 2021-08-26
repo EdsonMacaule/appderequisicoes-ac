@@ -62,6 +62,9 @@ if (!isset($_SESSION['id_usuario'])) {
     div#outside{
         float: right;
     }
+    div.container{
+        width: auto !important;
+    }
     div#outside a {
         margin-left: 90%;
         font-size: 16px;
@@ -73,7 +76,8 @@ if (!isset($_SESSION['id_usuario'])) {
 
     @media screen and (max-width: 414px) {
         div.container {
-            width: auto;
+            width: auto !important;
+            height: auto !important;
         }
 
         div.container h2 {
@@ -185,7 +189,7 @@ if (!isset($_SESSION['id_usuario'])) {
         </div>
     </div>
     <!--End Modal submit Request-->
-    <div class="container" style="background-color: whitesmoke; height: auto;">
+    <div class="container" style="background-color: whitesmoke; max-height: auto !important;">
         <br>
         <h2 class="center-text col-lg-pull-0" style="margin-top: 5%;">Bem-vindo ao Sistema de Gestão de Requisições - Usuário</h2>
         <br>
@@ -205,7 +209,7 @@ if (!isset($_SESSION['id_usuario'])) {
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
                             <div class="small-box bg-info"
-                                style=" border-radius: 10px; background:linear-gradient(#B82923 70%,#ffffff 50%);">
+                                style=" border-radius: 10px; background:linear-gradient(#d62839 70%,#ffffff 50%);">
                                 <div class="inner" style=" border-radius: 5px;">
                                     <?php $id_utilizador=$_SESSION['id_usuario'];  $result= $u->pedidos_pedentes_usuario($id_utilizador); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm;text-align: center;">
@@ -215,7 +219,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                         Requisições Pedentes</p>
                                     &nbsp;&nbsp;
                                 </div>
-                                <div class="icon" style="background-color: #B82923;border-radius: 5px; padding: 1mm; ">
+                                <div class="icon" style="background-color: #d62839;border-radius: 5px; padding: 1mm; ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle" viewBox="0 0 16 16"
                                         style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
@@ -230,7 +234,7 @@ if (!isset($_SESSION['id_usuario'])) {
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
                             <div class="small-box bg-success"
-                                style=" border-radius: 10px;background: linear-gradient(#D3E625 70%,#ffffff 50%);">
+                                style=" border-radius: 10px;background: linear-gradient(#ffd100 70%,#ffffff 50%);">
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $id_utilizador=$_SESSION['id_usuario'];  $result= $u->reviw_older_user($id_utilizador); ?>
                                     <h3 style="color: black; padding: 0.5mm; padding-top: 3mm; text-align: center;">
@@ -240,7 +244,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                         Requisições em Revisão</p>
                                     &nbsp;&nbsp;
                                 </div>
-                                <div class="icon" style=" background-color: #D3E625; border-radius: 5px ;padding: 1mm;">
+                                <div class="icon" style=" background-color: #ffd100; border-radius: 5px ;padding: 1mm;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle-half" viewBox="0 0 16 16"
                                         style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
@@ -254,7 +258,7 @@ if (!isset($_SESSION['id_usuario'])) {
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
                             <div class="small-box bg-warning"
-                                style="border-radius: 10px; background:linear-gradient(#32C441 70%,#ffffff 50%);">
+                                style="border-radius: 10px; background:linear-gradient(#38b000 70%,#ffffff 50%);">
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $id_utilizador=$_SESSION['id_usuario'];  $result= $u->older_user_aprov($id_utilizador); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm; text-align: center;">
@@ -264,7 +268,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                         Requisições Aprovadas</p>
                                     &nbsp;&nbsp;
                                 </div>
-                                <div class="icon" style=" background-color: #32C441; border-radius: 5px ;padding: 1mm;">
+                                <div class="icon" style=" background-color: #38b000; border-radius: 5px ;padding: 1mm;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle-fill" viewBox="0 0 16 16"
                                         style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
@@ -278,7 +282,7 @@ if (!isset($_SESSION['id_usuario'])) {
                         <div class="col-lg-3 col-6">
                             <!-- small box -->
                             <div class="small-box bg-danger"
-                                style="border-radius: 5px; background:linear-gradient(#3390B6 70%,#ffffff 50%)">
+                                style="border-radius: 5px; background:linear-gradient(#386fa4 70%,#ffffff 50%)">
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $id_utilizador=$_SESSION['id_usuario'];  $result= $u->older_user_done($id_utilizador); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm; text-align: center;">
@@ -288,7 +292,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                         Requisições Finalizadas</p>
                                     &nbsp;&nbsp;
                                 </div>
-                                <div class="icon" style="background-color: #3390B6;border-radius: 5px;padding: 1mm;">
+                                <div class="icon" style="background-color: #386fa4;border-radius: 5px;padding: 1mm;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-check2-all" viewBox="0 0 16 16"
                                         style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
@@ -321,7 +325,7 @@ if (!isset($_SESSION['id_usuario'])) {
         <h4 style="color: #606060; text-transform: uppercase; font-size: 12pt;"><strong>Veja a baixo as suas
                 requisições</strong></h4>
         <div class="col-lg-18">
-            <table class="table table-hover table-responsive">
+            <table class="table table-hover table-responsive" align="center">
                 <thead>
                     <tr>
                         <th>#</th>
@@ -342,14 +346,14 @@ if (!isset($_SESSION['id_usuario'])) {
                         <td style="text-align: left;"><?php echo $row["descricao_pedido"]; ?></td>
                         <td style="text-align: left;" ><?php echo $row["nome_utilizador"]; ?></td>
                         <td style="text-align: left;" ><?php echo $row["nome_departamento"]; ?></td>
-                        <td><?php echo ($row["nome_estado"]==1 ? '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        <td  ><?php echo ($row["nome_estado"]==1 ? '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle" viewBox="0 0 16 16"
-                                        style="margin-left: 20px; padding-top: 5px;" color="#B82923">
+                                        style="margin-left: 20px; padding-top: 5px;" color="#d62839">
                                         <path
                                             d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                     </svg>' : ($row["nome_estado"]==2 ?'<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle-half" viewBox="0 0 16 16"
-                                        style="margin-left: 20px; padding-top: 5px;" color="#D3E625">
+                                        style="margin-left: 20px; padding-top: 5px;" color="#ffd100">
                                         <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
                                     </svg>' : ($row["nome_estado"]==3 ?'<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle-fill" viewBox="0 0 16 16"
@@ -357,7 +361,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                         <circle cx="8" cy="8" r="8" />
                                     </svg>' : '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-check2-all" viewBox="0 0 16 16"
-                                        style="margin-left: 20px; padding-top: 5px;" color="#3390B6">
+                                        style="margin-left: 20px; padding-top: 5px;" color="#386fa4">
                                         <path
                                             d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z" />
                                         <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z" />
