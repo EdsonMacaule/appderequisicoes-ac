@@ -106,8 +106,8 @@ $u=new Usuario;
 
                     </div>
                 </div>
-                <div class="alert alert-error hide">Erro de registo, verifique se todos campos estão devidamente preenchidos ou o email ja esteja cadastrado!</div>
-                <div class="alert alert-success hide">Seu Registo foi submetido com sucesso</div>
+                <div class="alert alert-error hide" style="display: none" >Erro de registo, verifique se todos campos estão devidamente preenchidos ou o email ja esteja cadastrado!</div>
+                <div class="alert alert-success hide" style="display: none" >Seu Registo foi submetido com sucesso</div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary" id="adicionar"
@@ -132,13 +132,13 @@ $u=new Usuario;
                 <form method="POST" action="controllers/utilizador/acess.php">
                     <div class="row">
                         <div class="form-group col-md-10">
-                            <input class="form-control" type="email" placeholder="Usuário" name="email_utilizador"
+                            <input class="form-control" type="email" placeholder="Escreva seu Email" id="email_utilizador" name="email_utilizador"
                                 required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-10">
-                            <input class="form-control" type="password" placeholder="Senha" name="senha_utilizador"
+                            <input class="form-control" type="password" placeholder="Escreva sua Senha" id="senha_utilizador" name="senha_utilizador"
                                 required>
                         </div>
                     </div>
@@ -150,9 +150,11 @@ $u=new Usuario;
                             </div>
                         </div>
                     </div>
+                    <div class="alert alert-error hide" style="display: none">Erro de registo, verifique se todos campos estão devidamente preenchidos ou o email ja esteja cadastrado!</div>
+                    <div class="alert alert-success hide" style="display: none">Seu Registo foi submetido com sucesso</div>
                     <div class="row">
                         <div class="col-md-10">
-                            <button class="btn btn-primary btn-cons pull-right" type="submit" name="login" id="login"
+                            <button class="btn btn-primary btn-cons pull-right" type="submit" name="login_form" id="login_form"
                                 onclick="location.href='home.php'">Iniciar</button>
                         </div>
                     </div>
@@ -162,24 +164,15 @@ $u=new Usuario;
 
     </div>
 
-<!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
-<!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
-<!--<script src="../../assets/plugins/sweetalert/dist/sweetalert2.all.min.js" ></script>-->
-<!--<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>-->
+
 <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<!--<script src="../../assets/plugins/jquery/jquery.min.js" ></script>-->
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js//bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>-->
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous">
 </script>
-<!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>-->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
 </script>
-<!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
-<!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>-->
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>-->
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -225,6 +218,7 @@ $u=new Usuario;
 
 
         });
+
     });
 </script>
 

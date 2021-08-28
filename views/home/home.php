@@ -15,35 +15,42 @@ if (!isset($_SESSION['id_usuario'])) {
 }
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-    <meta charset="utf-8" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap.min.js" ></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js" ></script>
+    <script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js" ></script>
     <title>SGPI - gerenciamos os seus pedidos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <meta content="" name="description" />
-    <meta content="" name="author" />
-    <!--favicon-->
-    <link rel="icon" href="" type="image/x-icon" />
-    <!--end favicon-->
+    <script>
+        $(document).ready(function() {
+            $('#resquesting').DataTable( {
+                "language": {
+                    "search": "Pesquisar:",
+                    "Next": "Próximo",
+                    "lengthMenu": "Mostrar _MENU_ por página",
+                    "zeroRecords": "Nada foi encontrado - desculpe",
+                    "info": "Página _PAGE_ de _PAGES_",
+                    "infoEmpty": "Nenhuma requisição disponivel",
+                    "infoFiltered": "(filtered from _MAX_ total records)"
 
-    <!--Begin Plugins CSS-->
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">-->
-    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">-->
-    <!--    <link href="../../assets/plugins/bootstrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
-    <!--    <link href="../../assets/plugins/bootstrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />-->
-    <!--    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
-    <!--    <link href="../../assets/plugins/animate.min.css" rel="stylesheet" type="text/css" />-->
-    <link href="../../assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" />
-    <!--    <link rel="stylesheet" href="../../assets/plugins/sweetalert/dist/sweetalert2.min.css">-->
-    <!--End Plugins CSS-->
-    <!-- BEGIN CORE CSS FRAMEWORK -->
-    <link href="../../webarch/css/webarch.css" rel="stylesheet" type="text/css" />
-    <!-- END CORE CSS FRAMEWORK -->
+                },
+
+            } );
+
+        } );
+    </script>
 </head>
 
 <body>
@@ -51,21 +58,24 @@ if (!isset($_SESSION['id_usuario'])) {
     body {
         background-color: #C0D1C2;
     }
-
     table thead tr th {
         text-align: center;
     }
-
     table tbody tr td {
         text-align: center;
     }
-
+    table#resquesting tbody tr td button a:link {
+        text-decoration: none;
+    }
+    table#resquesting tbody tr td button a:hover {
+        color: white;
+    }
     div#statusModal {
-        height: 55%;
+        height: 100%;
         overflow: hidden;
 
     }
-    div#outside{
+    div#outside {
         float: right;
     }
     div#outside a {
@@ -77,40 +87,143 @@ if (!isset($_SESSION['id_usuario'])) {
         /*font-size: 9pt;*/
         text-align: center;
     }
+    div#requestmaster{
+        /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+        margin-left: 20%;
+        width: 864px;
+        /*border: 1px solid red;*/
+    }
+    div#requestmaster .btn{
+        width: 864px;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        /*margin-left: 25%;*/
+    }
+
     ul {
         list-style-type: none;
     }
 
     @media screen and (max-width: 414px) {
-        div.container {
-            width: auto;
-            height: auto !important;
+        div#dashboard{
+            padding: 5px;
         }
 
         div.container h2 {
-            font-size: 14pt;
+            font-size: 8pt;
             font-weight: bold;
-        }
-
-        div.container p {
-            font-size: 9pt;
             text-align: center;
         }
 
-        div.col-lg-8 .btn {
-            width: 250px;
-            font-size: large;
-            /*margin-right: 10%;*/
+        div.container p {
+            font-size: 7pt;
             text-align: center;
         }
 
         div.col-lg-12 table {
             width: auto;
         }
-        div#outside a {
-           font-size: 14px;
+        div#requestmaster{
+            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+            width: 350px;
+            margin-left: -8%;
+            border-radius: 5px;
+            /*border: 1px solid #444;*/
+        }
+        div#requestmaster button#requestmaster_button{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            width: 350px;
+            /*box-shadow: black;*/
+            margin-left: 10%;
         }
 
+        div#outside{
+            margin-right: 10%;
+        }
+        div#outside a#sair_do {
+            margin-left: -2%;
+            font-size: 12px;
+            /*border: 1px solid red;*/
+        }
+
+    }
+    @media screen and (max-width: 1024px){
+        div#dashboard{
+            padding: 5px;
+        }
+        div.container h2 {
+            font-size: 14pt;
+            font-weight: bold;
+            text-align: center;
+        }
+        div.container p {
+            font-size: 10pt;
+            text-align: center;
+        }
+        div.col-lg-12 table {
+            width: auto;
+        }
+        div#requestmaster{
+            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+
+            width: 600px;
+            /*padding-left: -20%;*/
+            border-radius: 10px;
+            /*border: 1px solid red;*/
+        }
+        div#requestmaster .btn{
+            width: 600px;
+            /*border-radius: 20px;*/
+            /*box-shadow: black;*/
+            /*padding-right: 80%;*/
+        }
+        div#outside {
+            float: right;
+        }
+        div#outside a {
+            margin-left: 60%;
+            font-size: 14px;
+        }
+
+    }
+    @media screen and (max-width: 990px){
+        div#dashboard{
+            padding: 5px;
+        }
+        div#requestmaster{
+            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+
+            width: 450px;
+            /*padding-left: -20%;*/
+            border-radius: 10px;
+            /*border: 1px solid red;*/
+        }
+        div#requestmaster .btn{
+            width: 450px;
+            /*border-radius: 20px;*/
+            /*box-shadow: black;*/
+            /*padding-right: 80%;*/
+        }
+
+    }
+    @media screen and (max-width: 360px){
+        div#requestmaster{
+            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+
+            width: 330px;
+            /*padding-left: -20%;*/
+            border-radius: 10px;
+            /*border: 1px solid red;*/
+        }
+        div#requestmaster .btn{
+            width: 330px;
+            /*border-radius: 20px;*/
+            /*box-shadow: black;*/
+            /*padding-right: 80%;*/
+        }
+        div#outside a {
+            margin-left: -1%;
+            font-size: 14px;
+        }
     }
     </style>
     <!-- Modal Update Status-->
@@ -140,18 +253,18 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <?php endforeach; ?>
                             </select>
                         </div>
-                            <div class="form-group">
-                                <label for="">Prioridade</label>
-                                <?php $result = $u->prioridade(); ?>
-                                <select name="prioridade_id" id="prioridade_id" class="form-control">
-                                    <?php foreach ($result as $row): ?>
-                                    <option value="<?php echo $row["id_prioridade"]; ?>">
-                                        <?php echo  ($row["nome_prioridade"] == 1 ? 'Baixa' : ($row["nome_prioridade"] == 2 ? 'Media' : 'Alta'));?>
-                                    </option>
-                                    <?php endforeach; ?>
-                                </select>
-                            </div>
-                            <!--                        <input type="text" class="form-control" name="estado" id="estado" value=""  disabled >-->
+                        <div class="form-group">
+                            <label for="">Prioridade</label>
+                            <?php $result = $u->prioridade(); ?>
+                            <select name="prioridade_id" id="prioridade_id" class="form-control">
+                                <?php foreach ($result as $row): ?>
+                                <option value="<?php echo $row["id_prioridade"]; ?>">
+                                    <?php echo  ($row["nome_prioridade"] == 1 ? 'Baixa' : ($row["nome_prioridade"] == 2 ? 'Media' : 'Alta'));?>
+                                </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                        <!--                        <input type="text" class="form-control" name="estado" id="estado" value=""  disabled >-->
                         <div class="form-group">
                             <label for="">Escolha o estado</label>
                             <?php $result = $u->status_request(); ?>
@@ -164,9 +277,10 @@ if (!isset($_SESSION['id_usuario'])) {
                             </select>
                         </div>
                     </div>
-                    <div class="alert alert-error hide">Erro de actualização, o estado deve ser diferente do actual!
+                    <div class="alert alert-error hide" style="display:none;">Erro de actualização, o estado deve ser
+                        diferente do actual!
                     </div>
-                    <div class="alert alert-success hide">Estado actualizado com sucesso</div>
+                    <div class="alert alert-success hide" style="display:none;">Estado actualizado com sucesso</div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary" id="update_form"
@@ -177,47 +291,49 @@ if (!isset($_SESSION['id_usuario'])) {
         </div>
     </div>
     <!--End Modal Update Status-->
-
-
-    <div class="container" style="background-color: whitesmoke;height: auto;">
+    <div class="container" style="background-color: whitesmoke;height: auto; ">
         <br>
-        <div class="col-md-5" id="outside" >
+        <div class="col-md-5" id="outside">
             <ul>
                 <li>
                     <strong>
-                <a href="../../logout.php" >
-                    <span style="color: red;" >
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-box-arrow-right" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z"/>
-  <path fill-rule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z"/>
+                        <a href="../../logout.php" id="sair_do" >
+                            <span style="color: red;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                                    class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                    <path fill-rule="evenodd"
+                                        d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
 
-                    </svg>
-                    </span>
-                    Sair</a>
+                                </svg>
+                            </span>
+                            Sair</a>
                     </strong>
                 </li>
             </ul>
         </div>
         <br>
-        <h2 class="center-text col-lg-pull-0" style="margin-top: 5%;">Bem-vindo ao Sistema de Gestão de Requisições
+        <h2 class="center-text col-lg-pull-0" style="margin-top: 5%; text-align:center; ">Bem-vindo ao Sistema de Gestão
+            de Requisições
             (SGR)</h2>
         <br>
         <p style="text-transform: uppercase; font-weight: bold;">Olá, <?php echo $_SESSION['nome_usuario']; ?>, esta
             janela reflete a todas Requisições feitas a nivel do sistema!</p>
         <!--Informando o nome do usuário logo que acessa o sistema-->
-<!--        <div class="col-md-5" id="outside">-->
-<!--            <strong><a href="../../logout.php">Sair</a></strong>-->
-<!--        </div>-->
+        <!--        <div class="col-md-5" id="outside">-->
+        <!--            <strong><a href="../../logout.php">Sair</a></strong>-->
+        <!--        </div>-->
         <br><br><br>
         <div class="content-wrapper">
             <section class="content">
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-6" id="dashboard">
                             <!-- small box -->
                             <div class="small-box bg-info"
-                                style=" border-radius: 10px; background:linear-gradient(#d62839 70%,#ffffff 50%);">
+                                style=" border-radius: 10px; background:linear-gradient(#d62839 70%,whitesmoke 50%);">
                                 <div class="inner" style=" border-radius: 5px;">
                                     <?php $result= $u->allrequest_pedind(); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm;text-align: center;">
@@ -239,16 +355,16 @@ if (!isset($_SESSION['id_usuario'])) {
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-6" id="dashboard">
                             <!-- small box -->
                             <div class="small-box bg-success"
-                                style=" border-radius: 10px;background: linear-gradient(#ffd100 70%,#ffffff 50%);">
+                                style=" border-radius: 10px;background: linear-gradient(#ffd100 70%,whitesmoke 50%);">
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $result= $u->allrequest_review(); ?>
-                                    <h3 style="color: black; padding: 0.5mm; padding-top: 3mm; text-align: center;">
+                                    <h3 style="color: #444; padding: 0.5mm; padding-top: 3mm; text-align: center;">
                                         <strong><?php  echo $result['Pedidos_EM_Revisao']; ?></strong>
                                     </h3>
-                                    <p style="color: black; padding: 0.5mm; font-size: 12pt; text-align: center;">
+                                    <p style="color: #444; padding: 0.5mm; font-size: 12pt; text-align: center;">
                                         Requisições em Revisão</p>
                                     &nbsp;&nbsp;
                                 </div>
@@ -263,10 +379,10 @@ if (!isset($_SESSION['id_usuario'])) {
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-6" id="dashboard">
                             <!-- small box -->
                             <div class="small-box bg-warning"
-                                style="border-radius: 10px; background:linear-gradient(#38b000 70%,#ffffff 50%);">
+                                style="border-radius: 10px; background:linear-gradient(#38b000 70%,whitesmoke 50%);">
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $result= $u->allrequest_aprov(); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm; text-align: center;">
@@ -287,10 +403,10 @@ if (!isset($_SESSION['id_usuario'])) {
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6">
+                        <div class="col-lg-3 col-6" id="dashboard">
                             <!-- small box -->
                             <div class="small-box bg-danger"
-                                style="border-radius: 5px; background:linear-gradient(#386fa4 70%,#ffffff 50%)">
+                                style="border-radius: 5px; background:linear-gradient(#386fa4 70%,whitesmoke 50%)">
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $result= $u->allrequest_done(); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm; text-align: center;">
@@ -320,21 +436,18 @@ if (!isset($_SESSION['id_usuario'])) {
             </section>
             <br><br><br>
         </div>
-        <div class="col-lg-12" style="display: flex;">
-            <!--    <div class="col-lg-8">-->
-            <!--        <button type="submit" name="btn challenge" class="btn btn-primary btn-lg btn-block" onclick="location.href='requisicoes/requisicao.php'" style="border-radius: 10px;">Nova Requisição</button>-->
-            <!--    </div>-->
-            <div class="col-lg-8" id="requestmaster" style="margin-left: 18%;">
-                <button type="submit" name="btn challenge" class="btn btn-primary btn-lg btn-block"
-                    onclick="location.href='admin.php'">Suas Requisições</button>
+        <div class="col-lg-12">
+            <div class="col-lg-8" id="requestmaster">
+                <button type="submit" id="requestmaster_button" class="btn btn-primary btn-block" onclick="location.href='admin.php'">Suas
+                    Requisições</button>
             </div>
         </div>
         <br><br><br><br>
         <div class="col-lg-18">
-            <table class="table table-hover table-responsive ">
+            <table id="resquesting" class="display responsive nowrap" style="width:100%">
                 <thead>
                     <tr>
-                        <th>#</th>
+                        <th style="text-align: left;" >#</th>
                         <th style="text-align: left;" >Descrição </th>
                         <th style="text-align: left;" >Remetente</th>
                         <th style="text-align: left;" >Departamento</th>
@@ -349,11 +462,11 @@ if (!isset($_SESSION['id_usuario'])) {
                 <tbody>
                     <?php $con=1; foreach ($result as $row): ?>
                     <tr>
-                        <th scope="row"><?php echo $con; ?></th>
+                        <td style="text-align: center;" scope="row" ><?php echo $con; ?></td>
                         <td style="text-align: left;"><?php echo $row["descricao_pedido"]; ?></td>
                         <td style="text-align: left;" ><?php echo $row["nome_utilizador"]; ?></td>
                         <td style="text-align: left;" ><?php echo $row["nome_departamento"]; ?></td>
-                        <td  ><?php echo ($row["nome_estado"]==1 ? '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        <td><?php echo ($row["nome_estado"]==1 ? '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle" viewBox="0 0 16 16"
                                         style="margin-left: 20px; padding-top: 5px;" color="#d62839">
                                         <path
@@ -372,42 +485,45 @@ if (!isset($_SESSION['id_usuario'])) {
                                         <path
                                             d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z" />
                                         <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z" />
-                                    </svg>'))); ?>
+                                    </svg>'))); ?></td>
+                        <td><button class="btn btn-primary"><a href="home.php#statusModal" id_pedido="<?php echo $row["id_pedido"]; ?>"
+                                nome_estado="<?php echo  $row["nome_estado"];?>"
+                                prioridade="<?php echo $row["nome_prioridade"]; ?>" class="badge badge-info edit_btn "
+                                data-toggle="modal" data-target="#statusModal" style="font-size: 14px;">Editar</a></button>
                         </td>
-                        <td><button class="btn btn-success"><a href="home.php#statusModal" id_pedido="<?php echo $row["id_pedido"]; ?>"
-                                nome_estado="<?php echo  $row["nome_estado"];?>" prioridade="<?php echo $row["nome_prioridade"]; ?>" class="badge badge-info edit_btn "
-                                data-toggle="modal" data-target="#statusModal" style="font-size: 14px;" >Editar</a></button>
                         <td><?php echo ($row["nome_prioridade"] == 1 ? '<button class=" btn btn-success"  >Baixa</button>' : ($row["nome_prioridade"] == 2 ? '<button class="btn btn-primary" >Media</button>' : '<button class="btn btn-danger" >Alta</button>')); ?>
                         </td>
                         <td><?php echo $row["data_pedido"]; ?></td>
                         <td><?php echo $row["update_data"]; ?></td>
                     </tr>
-
                     <?php $con++; endforeach;?>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <th>#</th>
+                        <th style="text-align: left;" >Descrição </th>
+                        <th style="text-align: left;" >Remetente</th>
+                        <th style="text-align: left;" >Departamento</th>
+                        <th>Estado</th>
+                        <th>Action</th>
+                        <th>Prioridade</th>
+                        <th>Data de Emissão</th>
+                        <th>Data de Actualização</th>
+                    </tr>
+                </tfoot>
             </table>
             <br><br>
         </div>
     </div>
 
-    <!--<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>-->
-    <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
-    <!--<script src="../../assets/plugins/sweetalert/dist/sweetalert2.all.min.js" ></script>-->
-    <!--<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>-->
-    <script src="https://code.jquery.com/jquery-3.6.0.js"
-        integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-    <!--<script src="../../assets/plugins/jquery/jquery.min.js" ></script>-->
-    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js//bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous">
     </script>
-    <!--<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>-->
+
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
     </script>
-    <!--<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>-->
-    <!--<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>-->
-    <!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>-->
+
 
     <script type="text/javascript">
     $(document).ready(function() {
