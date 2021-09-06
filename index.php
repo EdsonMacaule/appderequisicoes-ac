@@ -5,6 +5,7 @@ $u=new Usuario;
 ?>
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
     <meta charset="utf-8" />
@@ -17,11 +18,11 @@ $u=new Usuario;
     <!--end favicon-->
     <!--Begin Plugins CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<!--    <link href="assets/plugins/bootstrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
-<!--    <link href="assets/plugins/bootstrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />-->
-<!--    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
-<!--    <link href="assets/plugins/animate.min.css" rel="stylesheet" type="text/css" />-->
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <!--    <link href="assets/plugins/bootstrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />-->
+    <!--    <link href="assets/plugins/bootstrapv3/css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />-->
+    <!--    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">-->
+    <!--    <link href="assets/plugins/animate.min.css" rel="stylesheet" type="text/css" />-->
     <link href="assets/plugins/jquery-scrollbar/jquery.scrollbar.css" rel="stylesheet" type="text/css" />
     <!--End Plugins CSS-->
     <!-- BEGIN CORE CSS FRAMEWORK -->
@@ -29,95 +30,104 @@ $u=new Usuario;
     <!-- END CORE CSS FRAMEWORK -->
 </head>
 <!--#1B1E24-->
+
 <body>
-<style>
-    body{
+    <style>
+    body {
         background-color: #1B1E24;
         overflow: hidden;
     }
-    div.row.login-container.column-seperation{
+
+    div.row.login-container.column-seperation {
         padding-top: 10%;
     }
-    div.col-md-5.col-md-offset-1{
+
+    div.col-md-5.col-md-offset-1 {
         border-right: 3px solid #5f6775;
     }
-    div#adduserModal{
-        height: 65%;
+
+    div#adduserModal {
+        height: 70%;
         overflow: hidden;
     }
 
-    @media screen and (max-width: 414px){
-        div.row.login-container.column-seperation{
+    @media screen and (max-width: 414px) {
+        div.row.login-container.column-seperation {
             padding-top: 50%;
         }
-        div#adduserModal{
-            height: 67%;
+
+        div#adduserModal {
+            height: 85%;
         }
     }
-</style>
+    </style>
 
-<!-- Modal submit Request-->
-<div class="modal fade bd-example-modal-sm" id="adduserModal" tabindex="-1" role="dialog"
-     aria-labelledby="RequestModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="adduserModalLabel"><strong>Faça aqui o seu registro</strong></h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+    <!-- Modal submit Request-->
+    <div class="modal fade bd-example-modal-sm" id="adduserModal" tabindex="-1" role="dialog"
+        aria-labelledby="RequestModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="adduserModalLabel"><strong>Faça aqui o seu registro</strong></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form method="POST" action="controllers/utilizador/register.php">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <input class="form-control" type="name" placeholder="Nome Completo" id="nome_utilizador"
+                                name="nome_utilizador">
+                        </div>
+                        <div class="form-group">
+
+                            <input class="form-control" type="email" placeholder="Escreva seu email"
+                                id="email_utilizador" name="email_utilizador">
+
+                        </div>
+                        <div class="form-group" style="display: none;">
+                            <?php $result= $u->email_usuario(); ?>
+                            <select name="email_user" id="email_user" class="form-control">
+                                <?php foreach ($result as $row): ?>
+                                <option value="<?php echo $row["email_utilizador"];?>"></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <?php $result = $u->cargo(); ?>
+                            <select class="form-control" name="cargo" id="cargo" aria-label="Default select example">
+                                <?php foreach ($result as $row): ?>
+                                <option class="optionnivel" value="<?php echo $row["id_cargo"];?>">
+                                    <?php echo $row["nome_cargo"]; ?></option><?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="form-group" style="display: none">
+
+                            <input class="form-control" type="text" placeholder="Perfil" value="user"
+                                id="perfil_utilizador" name="perfil_utilizador">
+
+                        </div>
+                        <div class="form-group ">
+
+                            <input class="form-control" type="password" placeholder="Senha" id="senha_utilizador"
+                                name="senha_utilizador">
+
+                        </div>
+                    </div>
+                    <div class="alert alert-error hide" style="display: none">Erro de registo, verifique se todos campos
+                        estão devidamente preenchidos ou o email ja esteja cadastrado!</div>
+                    <div class="alert alert-success hide" style="display: none">Seu Registo foi submetido com sucesso
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary" id="adicionar" name="adicionar">Registar</button>
+                    </div>
+                </form>
             </div>
-            <form method="POST" action="controllers/utilizador/register.php">
-                <div class="modal-body">
-                    <div class="form-group">
-                        <input class="form-control" type="name" placeholder="Nome Completo" id="nome_utilizador" name="nome_utilizador">
-                    </div>
-                    <div class="form-group">
-
-                        <input class="form-control" type="email" placeholder="Escreva seu email" id="email_utilizador" name="email_utilizador">
-
-                    </div>
-                    <div class="form-group" style="display: none;">
-                        <?php $result= $u->email_usuario(); ?>
-                        <select name="email_user" id="email_user" class="form-control">
-                            <?php foreach ($result as $row): ?>
-                            <option value="<?php echo $row["email_utilizador"];?>"></option>
-                            <?php endforeach; ?>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <?php $result = $u->cargo(); ?>
-                        <select class="form-control" name="cargo" id="cargo" aria-label="Default select example">
-                            <?php foreach ($result as $row): ?>
-                            <option class="optionnivel" value="<?php echo $row["id_cargo"];?>">
-                                <?php echo $row["nome_cargo"]; ?></option><?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group" style="display: none">
-
-                        <input class="form-control" type="text" placeholder="Perfil" value="user"
-                              id="perfil_utilizador" name="perfil_utilizador">
-
-                    </div>
-                    <div class="form-group ">
-
-                        <input class="form-control" type="password" placeholder="Senha" id="senha_utilizador" name="senha_utilizador">
-
-                    </div>
-                </div>
-                <div class="alert alert-error hide" style="display: none" >Erro de registo, verifique se todos campos estão devidamente preenchidos ou o email ja esteja cadastrado!</div>
-                <div class="alert alert-success hide" style="display: none" >Seu Registo foi submetido com sucesso</div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="submit" class="btn btn-primary" id="adicionar"
-                            name="adicionar">Registar</button>
-                </div>
-            </form>
         </div>
     </div>
-</div>
-<!--End Modal submit Request-->
+    <!--End Modal submit Request-->
     <div id="form-group" class="container">
         <div class="row login-container column-seperation">
             <div class="col-md-5 col-md-offset-1" style="margin-right: 50px">
@@ -132,30 +142,32 @@ $u=new Usuario;
                 <form method="POST" action="controllers/utilizador/acess.php">
                     <div class="row">
                         <div class="form-group col-md-10">
-                            <input class="form-control" type="email" placeholder="Escreva seu Email" id="email_utilizador" name="email_utilizador"
-                                required>
+                            <input class="form-control" type="email" placeholder="Escreva seu Email"
+                                id="email_utilizador" name="email_utilizador" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col-md-10">
-                            <input class="form-control" type="password" placeholder="Escreva sua Senha" id="senha_utilizador" name="senha_utilizador"
-                                required>
+                            <input class="form-control" type="password" placeholder="Escreva sua Senha"
+                                id="senha_utilizador" name="senha_utilizador" required>
                         </div>
                     </div>
                     <div class="row">
                         <div class="control-group col-md-10">
                             <div class="checkbox checkbox check-success">
-                                <a href="index.php#adduserModal" class="badge badge-info edit_btn "
-                                   data-toggle="modal" data-target="#adduserModal">Faça o seu Cadastro</a>
+                                <a href="index.php#adduserModal" class="badge badge-info edit_btn " data-toggle="modal"
+                                    data-target="#adduserModal">Faça o seu Cadastro</a>
                             </div>
                         </div>
                     </div>
-                    <div class="alert alert-error hide" style="display: none">Erro de registo, verifique se todos campos estão devidamente preenchidos ou o email ja esteja cadastrado!</div>
-                    <div class="alert alert-success hide" style="display: none">Seu Registo foi submetido com sucesso</div>
+                    <!-- <div class="alert alert-error hide" style="display: none">Erro de registo, verifique se todos campos
+                        estão devidamente preenchidos ou o email ja esteja cadastrado!</div>
+                    <div class="alert alert-success hide" style="display: none">Seu Registo foi submetido com sucesso
+                    </div> -->
                     <div class="row">
                         <div class="col-md-10">
-                            <button class="btn btn-primary btn-cons pull-right" type="submit" name="login_form" id="login_form"
-                                onclick="location.href='home.php'">Iniciar</button>
+                            <button class="btn btn-primary btn-cons pull-right" type="submit" name="login_form"
+                                id="login_form" onclick="location.href='home.php'">Iniciar</button>
                         </div>
                     </div>
                 </form>
@@ -165,16 +177,16 @@ $u=new Usuario;
     </div>
 
 
-<script src="https://code.jquery.com/jquery-3.6.0.js"
+    <script src="https://code.jquery.com/jquery-3.6.0.js"
         integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous">
-</script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-</script>
+    </script>
 
-<script type="text/javascript">
+    <script type="text/javascript">
     $(document).ready(function() {
 
         $('#adicionar').click(function(e) {
@@ -187,7 +199,8 @@ $u=new Usuario;
             var utilizador_senha = $('#senha_utilizador').val();
             var email_user = $('#email_user').val();
             // alert(pedido_nome);
-            if (utilizador_nome == "" || utilizador_email==email_user || utilizador_cargo=="" || utilizador_perfil=="" || utilizador_senha=="" ) {
+            if (utilizador_nome == "" || utilizador_email == email_user || utilizador_cargo == "" ||
+                utilizador_perfil == "" || utilizador_senha == "") {
                 $('.alert-error').show();
             } else {
                 $.ajax({
@@ -220,7 +233,7 @@ $u=new Usuario;
         });
 
     });
-</script>
+    </script>
 
 </body>
 

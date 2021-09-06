@@ -24,6 +24,7 @@ if (!isset($_SESSION['id_usuario'])) {
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="../../assets/css/admin/style.css">-->
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -57,41 +58,62 @@ if (!isset($_SESSION['id_usuario'])) {
     body {
         background-color: #C0D1C2;
     }
+    /*aqui*/
     table thead tr th {
-        text-align: center;
+        text-align: center !important;
     }
     table tbody tr td {
-        text-align: center;
+        text-align: center !important;
     }
     div#RequestModal {
-        height: 100%;
-        overflow: hidden;
+        height: 100% !important;
+        overflow: hidden !important;
 
     }
-    div#outside {
-        float: right;
+    div.container div#outside {
+        width: 10% !important;
+        margin-top: -35px !important;
+        margin-left: 90% !important;
+        /*border: 1px solid red;*/
     }
     div#outside a {
-        margin-left: 70%;
-        font-size: 18px;
-        /*padding-top: -10%;*/
+        font-size: 18px !important;
+        color: #a5a58d !important;
+        text-decoration: none !important;
+    }
+
+    div#outside a:hover{
+        color: red !important;
+    }
+    div#outside svg:hover{
+        color: red !important;
     }
     div.container p {
         /*font-size: 9pt;*/
-        text-align: center;
+        text-align: center !important;
     }
     div#requestmaster{
-        /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
-        margin-left: 20%;
-        /*border: 1px solid red;*/
+        width: 250px !important;
+        margin-left: 28% !important;
+
     }
     div#requestmaster .btn{
-        width: 864px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        /*margin-left: 20%;*/
+        width: 250px !important;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+        font-size: 12pt !important;
     }
     ul {
-        list-style-type: none;
+        list-style-type: none !important;
+    }
+    div#resquesting_filter label{
+        text-align: left !important;
+    }
+    div.container button#allrequestmaster_button{
+        width: 180px !important;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+        margin-left: 80% !important;
+        margin-top: 50px !important;
+        /*border: 1px solid red;*/
     }
     @media screen and (max-width: 414px) {
         div#dashboard{
@@ -112,28 +134,33 @@ if (!isset($_SESSION['id_usuario'])) {
         div.col-lg-12 table {
             width: auto;
         }
-        div#requestmaster{
-            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
-            width: 350px;
-            margin-left: -8%;
+        div#req_star div#requestmaster{
+            width: 220px;
+            margin-left: 80px;
             border-radius: 5px;
-            /*border: 1px solid #444;*/
         }
         div#requestmaster button#requestmaster_button{
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            width: 350px;
-            /*box-shadow: black;*/
-            margin-left: 10%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important; ;
+            width: 180px !important;
+            font-size: 12pt;
+            margin-left: -4% !important;
         }
 
-        div#outside{
-            margin-right: 10%;
+       div.container button#allrequestmaster_button{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+            width: 180px !important;
+            margin-left: 4%;
+            font-size: 10pt !important;
+            /*border: 2px solid white;*/
         }
-        div#outside a#voltar_do {
-            margin-left: -2%;
-            font-size: 12px;
-            /*border: 1px solid red;*/
-        }
+
+       /*div.container div#outside{*/
+       /*     margin-left: 70% !important;*/
+       /*     width: 30% !important;*/
+       /* }*/
+       /* div#outside a#sair_do {*/
+       /*     font-size: 12px !important;*/
+       /* }*/
 
     }
     @media screen and (max-width: 1024px){
@@ -152,46 +179,67 @@ if (!isset($_SESSION['id_usuario'])) {
         div.col-lg-12 table {
             width: auto;
         }
-        div#requestmaster{
+        button#allrequestmaster_button{
+            width: 180px;
+            margin-left: 70%;
+            /*border: 1px solid red;*/
+        }
+        div#req_star div#requestmaster{
             /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 
-            width: 600px;
+            width: 220px;
             /*padding-left: -20%;*/
             border-radius: 10px;
             /*border: 1px solid red;*/
+            margin-left: 0% !important;
         }
-        div#requestmaster .btn{
-            width: 600px;
+        div#requestmaster button#requestmaster_button{
+            width: 220px  ;
             /*border-radius: 20px;*/
             /*box-shadow: black;*/
             /*padding-right: 80%;*/
         }
         div#outside {
-            float: right;
+            /*float: right;*/
+            width: 10%;
+            margin-top: -30px;
+            /*border: 1px solid red;*/
         }
         div#outside a {
-            margin-left: 60%;
+            /*margin-left: 60%;*/
             font-size: 14px;
         }
 
     }
     @media screen and (max-width: 990px){
         div#dashboard{
-            padding: 5px;
+            padding: 5px !important;
         }
-        div#requestmaster{
-            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+        div#req_star div#requestmaster{
+            width: 250px !important;
+            margin-left: 5% !important;
+            border-radius: 10px !important;
+        }
+        div.container button#allrequestmaster_button{
+            width: 180px !important;
+            margin-left: 65% !important;
+            font-size: 11pt !important;
+        }
+        button#requestmaster_button{
+            width: 250px !important;
+            font-size: 11pt !important;
 
-            width: 450px;
-            /*padding-left: -20%;*/
-            border-radius: 10px;
-            /*border: 1px solid red;*/
         }
-        div#requestmaster .btn{
-            width: 450px;
-            /*border-radius: 20px;*/
-            /*box-shadow: black;*/
-            /*padding-right: 80%;*/
+        div#RequestModal{
+            overflow: scroll !important;
+        }
+        div.container div#outside {
+            width: 15% !important;
+            margin-left: 80% !important;
+            margin-top: -30px !important;
+        }
+        div#outside a{
+            margin-left: 0% !important;
         }
 
     }
@@ -204,45 +252,55 @@ if (!isset($_SESSION['id_usuario'])) {
             border-radius: 10px;
             /*border: 1px solid red;*/
         }
-        div#requestmaster .btn{
-            width: 330px;
-            /*border-radius: 20px;*/
-            /*box-shadow: black;*/
-            /*padding-right: 80%;*/
+        div.container button#allrequestmaster_button{
+            width: 180px !important;
+            margin-left: 45% !important;
+            font-size: 10pt !important;
         }
-        div#outside a {
+        div#req_star div#requestmaster button#requestmaster_button{
+            width: 180px !important;
+            font-size: 10pt !important;
+            text-align: center !important;
+            margin-left: -4% !important;
+        }
+        div.container div#outside{
+            width: 25% !important;
+            margin-left: 70% !important;
+        }
+
+        div.container div#outside a {
             margin-left: -1%;
             font-size: 14px;
         }
     }
 </style>
-    <!-- Modal submit Request-->
+    <!-- Start Modal submit Request-->
     <div class="modal fade bd-example-modal-sm" id="RequestModal" tabindex="-1" role="dialog"
         aria-labelledby="RequestModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="RequestModalLabel">Submeter Requisições</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h5 class="modal-title" id="RequestModalLabel">Submeter nova requisição</h5>
+<!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                        <span aria-hidden="true">&times;</span>-->
+<!--                    </button>-->
                 </div>
                 <form method="POST" action="../../controllers/home/olders.php">
                     <div class="modal-body">
-                        <div class="form-group">
-                            <label for="exampleFormControlTextarea1" style="color: black;">Escreva seu pedido</label>
+                        <div class="form-group" style="padding-bottom: 10px" >
+                            <label for="exampleFormControlTextarea1" style="color: #444; font-weight: bold ">Escreva seu pedido</label>
                             <textarea class="form-control" id="nome_pedido" name="nome_pedido" rows="2"></textarea>
                         </div>
 
-                        <div class="form-group">
-                            <label for="exampleFormControlInput1" style="color: black;">Remetente</label>
+                        <div class="form-group" style="padding-bottom: 10px" >
+                            <label for="exampleFormControlInput1" style="color: #444; font-weight: bold">Remetente</label>
 
                             <input type="email" class="form-control" id="exampleFormControlInput1"
                                 placeholder="<?php echo $_SESSION['nome_usuario']; ?> "
                                 style="text-transform: uppercase; font-weight: bold;" disabled>
 
                         </div>
-                        <div class="form-group" style="color: black; display: none;">
+                        <div class="form-group" style="color: #444; font-weight: bold; display: none;">
                             <label for="exampleFormControlInput1" style="color: black;">Remetente</label>
 
                             <select class="form-control" name="id_utilizador" id="id_utilizador">
@@ -250,8 +308,8 @@ if (!isset($_SESSION['id_usuario'])) {
                             </select>
 
                         </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1" style="color: black;">Qual é o seu
+                        <div class="form-group" style="padding-bottom: 10px" >
+                            <label for="exampleFormControlSelect1" style="color: #444; font-weight: bold ">Qual é o seu
                                 departamento?</label>
                             <!--                    <select class="form-control" id="exampleFormControlSelect1">-->
                             <?php $result = $u->departamento(); ?>
@@ -261,8 +319,8 @@ if (!isset($_SESSION['id_usuario'])) {
                                     <?php echo $row["nome_departamento"]; ?></option><?php endforeach; ?>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1" style="color: black;">Estado do pedido</label>
+                        <div class="form-group" style="padding-bottom: 10px;" >
+                            <label for="exampleFormControlSelect1" style="color: #444; font-weight: bold ">Estado do pedido</label>
                             <select class="form-control" id="id_estado" name="id_estado"
                                 aria-label="Disabled select example" disabled>
                                 <option value="1" selected>Pedendete</option>
@@ -271,8 +329,8 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <option value="4">Feito</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="exampleFormControlSelect1" style="color: black;">Qual é a prioridade do seu
+                        <div class="form-group" style="padding-bottom: 10px" >
+                            <label for="exampleFormControlSelect1" style="color: #444; font-weight: bold ">Qual é a prioridade do seu
                                 pedido?</label>
                             <select class="form-control" id="id_prioridade" name="id_prioridade"
                                 aria-label="Disabled select example">
@@ -282,11 +340,11 @@ if (!isset($_SESSION['id_usuario'])) {
                             </select>
                         </div>
                     </div>
-                    <div class="alert alert-error hide" style="display: none" >Erro de registo, verifique se todos campos estão devidamente
+                    <div class="alert alert-error hide" style="display: none; color: red" >Erro de registo, verifique se todos campos estão devidamente
                         preenchidos!</div>
-                    <div class="alert alert-success hide" style="display: none" >Sua requisição foi submetida com sucesso</div>
+                    <div class="alert alert-success hide" style="display: none; color: green " >Sua requisição foi submetida com sucesso</div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                         <button type="submit" class="btn btn-primary" id="submeter_form"
                             name="submeter_form">Submeter</button>
                     </div>
@@ -296,17 +354,37 @@ if (!isset($_SESSION['id_usuario'])) {
     </div>
     <!--End Modal submit Request-->
     <div class="container" style="background-color: whitesmoke;height: auto;">
+        <button type="submit" id="allrequestmaster_button" class="btn btn-primary btn-block" onclick="location.href='home.php'">Todas requisições</button>
+<!--        <div class="col-md-5" id="outside">-->
+<!--            <ul>-->
+<!--                <li>-->
+<!--                    <strong>-->
+<!--                        <a href="../../logout.php" id="sair_do" >-->
+<!--                            <span style="color: #a5a58d;" id="spann_id">-->
+<!--                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"-->
+<!--                                     class="bi bi-box-arrow-right" viewBox="0 0 16 16">-->
+<!--                                    <path fill-rule="evenodd"-->
+<!--                                          d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />-->
+<!--                                    <path fill-rule="evenodd"-->
+<!--                                          d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />-->
+<!---->
+<!--                                </svg>-->
+<!--                            </span>-->
+<!--                            Sair</a>-->
+<!--                    </strong>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </div>-->
+        <h2 class="center-text col-lg-pull-0" style="margin-top: 5%; text-align:center;">Sistema de Gestão de Requisições - Usuário</h2>
         <br>
-        <h2 class="center-text col-lg-pull-0" style="margin-top: 5%; text-align:center;">Bem-vindo ao Sistema de Gestão de Requisições - Usuário</h2>
-        <br>
-        <p style="text-transform: uppercase; font-weight: bold;">Olá, <?php echo $_SESSION['nome_usuario']; ?>, Nesta
-            Janela tem todas suas requisições!</p>
+        <p style="text-transform: lowercase; font-weight: normal;">Olá <?php echo $_SESSION['nome_usuario']; ?>, Nesta
+            Janela tem suas requisições!</p>
         <!--Informando o nome do usuário logo que acessa o sistema-->
-        <div class="col-md-5" id="outside">
-            <a href="home.php" id="voltar_do" style="font-size: 12pt;">Voltar</a>
-        </div>
+<!--        <div class="col-md-5" id="outside">-->
+<!--            <a href="home.php" id="voltar_do" style="font-size: 12pt;">Voltar</a>-->
+<!--        </div>-->
         <!--    --><?php //echo $_SESSION['id_usuario']; ?>
-        <br><br><br>
+        <br>
         <div class="content-wrapper">
             <section class="content">
                 <div class="container-fluid">
@@ -420,17 +498,17 @@ if (!isset($_SESSION['id_usuario'])) {
             </section>
             <br><br><br>
         </div>
-        <div class="col-lg-12">
+        <div class="col-lg-12" id="req_star">
             <div class="col-lg-8" id="requestmaster">
                 <button type="submit" name="btn" id="requestmaster_button" class="btn btn-primary btn-lg btn-block"
                     onclick="location.href='admin.php#RequestModal'" style="border-radius: 8px;" data-toggle="modal"
-                    data-target="#RequestModal">Nova Requisição</button>
+                    data-target="#RequestModal">Criar nova requisição</button>
             </div>
         </div>
-        <br><br><br><br>
+        <br><br>
         <h4 style="color: #606060; text-transform: uppercase; font-size: 12pt;"><strong>Veja a baixo as suas requisições</strong></h4>
-        <div class="col-lg-18">
-            <table id="resquesting" class="display responsive nowrap" style="width:100%">
+        <div class="col-lg-14">
+            <table id="resquesting" class="display responsive nowrap" style="width:98%">
                 <thead>
                     <tr>
                         <th style="text-align: left;">#</th>
@@ -494,6 +572,8 @@ if (!isset($_SESSION['id_usuario'])) {
 <!--                </tfoot>-->
             </table>
             <br><br>
+            <p style="color: #b7b7a4" ><strong>powered by Agência Criativa - 2021</strong></p>
+            <br>
         </div>
     </div>
 

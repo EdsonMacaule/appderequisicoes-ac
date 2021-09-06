@@ -56,94 +56,116 @@ if (!isset($_SESSION['id_usuario'])) {
 <body>
     <style>
     body {
-        background-color: #C0D1C2;
+        background-color: #C0D1C2 !important;
     }
     table thead tr th {
-        text-align: center;
+        text-align: center !important;
     }
     table tbody tr td {
-        text-align: center;
+        text-align: center !important;
     }
     table#resquesting tbody tr td button a:link {
-        text-decoration: none;
+        text-decoration: none !important;
     }
     table#resquesting tbody tr td button a:hover {
-        color: white;
+        color: white !important;
     }
     div#statusModal {
-        height: 100%;
-        overflow: hidden;
+        height: 100% !important;
+        overflow: hidden !important;
 
     }
     div#outside {
-        float: right;
+        /*float: right;*/
+        /*border: 1px solid red;*/
+        width: 10% !important;
+        margin-top: -35px !important;
+        margin-left: 90% !important;
     }
     div#outside a {
-        margin-left: 80%;
-        font-size: 18px;
+        /*margin-left: 30%;*/
+        font-size: 18px !important;
+        color: #a5a58d !important;
+        text-decoration: none !important;
+
         /*padding-top: -10%;*/
+    }
+
+    div#outside a:hover{
+        color: red !important;
+    }
+    div#outside svg:hover{
+        color: red !important;
     }
     div.container p {
         /*font-size: 9pt;*/
-        text-align: center;
+        text-align: center !important;
     }
-    div#requestmaster{
-        /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
-        margin-left: 20%;
-        width: 864px;
-        /*border: 1px solid red;*/
-    }
-    div#requestmaster .btn{
-        width: 864px;
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-        /*margin-left: 25%;*/
+    /*div#requestmaster{*/
+    /*    !*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*!*/
+    /*    margin-left: 20%;*/
+    /*    width: 180px;*/
+    /*    margin-top: 50px;*/
+    /*}*/
+    button#requestmaster_button{
+        width: 180px !important;
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+        margin-left: 70% !important;
+        margin-top: 50px !important;
     }
 
     ul {
-        list-style-type: none;
+        list-style-type: none !important;
+    }
+    div#resquesting_filter label{
+        text-align: left !important;
     }
 
     @media screen and (max-width: 414px) {
         div#dashboard{
-            padding: 5px;
+            padding: 5px !important;
         }
 
         div.container h2 {
-            font-size: 8pt;
-            font-weight: bold;
-            text-align: center;
+            font-size: 8pt !important;
+            font-weight: bold !important;
+            text-align: center !important;
         }
 
         div.container p {
-            font-size: 7pt;
-            text-align: center;
+            font-size: 7pt !important;
+            text-align: center !important;
         }
 
         div.col-lg-12 table {
-            width: auto;
+            width: auto !important;
         }
-        div#requestmaster{
-            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
-            width: 350px;
-            margin-left: -8%;
-            border-radius: 5px;
-            /*border: 1px solid #444;*/
-        }
-        div#requestmaster button#requestmaster_button{
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-            width: 350px;
+        /*div#requestmaster{*/
+        /*    !*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*!*/
+        /*    width: 350px;*/
+        /*    margin-left: -8%;*/
+        /*    border-radius: 5px;*/
+        /*    !*border: 1px solid #444;*!*/
+        /*}*/
+        button#requestmaster_button{
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+            width: 180px !important;
             /*box-shadow: black;*/
-            margin-left: 10%;
+            margin-left: 0% !important;
+            /*border: 1px solid red;*/
         }
 
         div#outside{
-            margin-right: 10%;
-        }
-        div#outside a#sair_do {
-            margin-left: -2%;
-            font-size: 12px;
+            margin-left: 70% !important;
+            width: 25% !important;
             /*border: 1px solid red;*/
         }
+        div#outside a#sair_do {
+            margin-left: 0% !important;
+            font-size: 12px !important;
+            /*border: 1px solid red;*/
+        }
+
 
     }
     @media screen and (max-width: 1024px){
@@ -162,25 +184,27 @@ if (!isset($_SESSION['id_usuario'])) {
         div.col-lg-12 table {
             width: auto;
         }
-        div#requestmaster{
-            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+        /*div#requestmaster{*/
+        /*    !*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*!*/
 
-            width: 600px;
-            /*padding-left: -20%;*/
-            border-radius: 10px;
-            /*border: 1px solid red;*/
-        }
-        div#requestmaster .btn{
-            width: 600px;
+        /*    width: 600px;*/
+        /*    !*padding-left: -20%;*!*/
+        /*    border-radius: 10px;*/
+        /*    !*border: 1px solid red;*!*/
+        /*}*/
+        button#requestmaster_button{
+            width: 180px;
             /*border-radius: 20px;*/
             /*box-shadow: black;*/
             /*padding-right: 80%;*/
         }
         div#outside {
-            float: right;
+            /*float: right;*/
+            width: 10%;
+            margin-top: -30px;
         }
         div#outside a {
-            margin-left: 60%;
+            /*margin-left: 60%;*/
             font-size: 14px;
         }
 
@@ -189,39 +213,52 @@ if (!isset($_SESSION['id_usuario'])) {
         div#dashboard{
             padding: 5px;
         }
-        div#requestmaster{
-            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+        /*div#requestmaster{*/
+        /*    !*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*!*/
 
-            width: 450px;
-            /*padding-left: -20%;*/
-            border-radius: 10px;
-            /*border: 1px solid red;*/
-        }
-        div#requestmaster .btn{
-            width: 450px;
+        /*    width: 450px;*/
+        /*    !*padding-left: -20%;*!*/
+        /*    border-radius: 10px;*/
+        /*    !*border: 1px solid red;*!*/
+        /*}*/
+        button#requestmaster_button{
+            width: 180px;
+            margin-left: 0% !important;
             /*border-radius: 20px;*/
             /*box-shadow: black;*/
             /*padding-right: 80%;*/
+        }
+        div#outside {
+            /*float: right;*/
+            width: 20% !important;
+            margin-left: 80% !important;
+            margin-top: -30px;
         }
 
     }
     @media screen and (max-width: 360px){
-        div#requestmaster{
-            /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+        /*div#requestmaster{*/
+        /*    !*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*!*/
 
-            width: 330px;
-            /*padding-left: -20%;*/
-            border-radius: 10px;
-            /*border: 1px solid red;*/
-        }
-        div#requestmaster .btn{
-            width: 330px;
+        /*    width: 330px;*/
+        /*    !*padding-left: -20%;*!*/
+        /*    border-radius: 10px;*/
+        /*    !*border: 1px solid red;*!*/
+        /*}*/
+        button#requestmaster_button{
+            width: 180px;
+            margin-left: 10%;
             /*border-radius: 20px;*/
             /*box-shadow: black;*/
             /*padding-right: 80%;*/
         }
+       div.container div#outside{
+            width: 30% !important; ;
+            margin-left: 65% !important;
+            /*border: 1px solid red;*/
+        }
         div#outside a {
-            margin-left: -1%;
+            /*margin-left: -1%;*/
             font-size: 14px;
         }
     }
@@ -232,10 +269,10 @@ if (!isset($_SESSION['id_usuario'])) {
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="statusModalLabel">Estado das Requisições</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                    <h5 class="modal-title" id="statusModalLabel">Alterar o estado e prioridade da requisição</h5>
+<!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+<!--                        <span aria-hidden="true">&times;</span>-->
+<!--                    </button>-->
                 </div>
                 <form method="POST" action="status.php">
                     <div class="modal-body">
@@ -253,8 +290,8 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <?php endforeach; ?>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <label for="">Prioridade</label>
+                        <div class="form-group" style="padding-bottom: 10px" >
+                            <label for="" style="font-weight: bold">Escolha a prioridade</label>
                             <?php $result = $u->prioridade(); ?>
                             <select name="prioridade_id" id="prioridade_id" class="form-control">
                                 <?php foreach ($result as $row): ?>
@@ -265,8 +302,8 @@ if (!isset($_SESSION['id_usuario'])) {
                             </select>
                         </div>
                         <!--                        <input type="text" class="form-control" name="estado" id="estado" value=""  disabled >-->
-                        <div class="form-group">
-                            <label for="">Escolha o estado</label>
+                        <div class="form-group" style="padding-bottom: 10px" >
+                            <label for="" style="font-weight: bold">Escolha o estado</label>
                             <?php $result = $u->status_request(); ?>
                             <select name="update_estado" id="update_estado" class="form-control">
                                 <?php foreach ($result as $row): ?>
@@ -277,14 +314,14 @@ if (!isset($_SESSION['id_usuario'])) {
                             </select>
                         </div>
                     </div>
-                    <div class="alert alert-error hide" style="display:none;">Erro de actualização, o estado deve ser
+                    <div class="alert alert-error hide" style="display:none; color: red">Erro de actualização, o estado deve ser
                         diferente do actual!
                     </div>
-                    <div class="alert alert-success hide" style="display:none;">Estado actualizado com sucesso</div>
+                    <div class="alert alert-success hide" style="display:none; color: green ">Estado e prioridade actualizados com sucesso</div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                         <button type="submit" class="btn btn-primary" id="update_form"
-                            name="update_form">Update</button>
+                            name="update_form">Actualizar</button>
                     </div>
                 </form>
             </div>
@@ -292,13 +329,14 @@ if (!isset($_SESSION['id_usuario'])) {
     </div>
     <!--End Modal Update Status-->
     <div class="container" style="background-color: whitesmoke;height: auto; ">
-        <br>
+
+        <button type="submit" id="requestmaster_button" class="btn btn-primary btn-block" onclick="location.href='admin.php'">Minhas Requisições</button>
         <div class="col-md-5" id="outside">
             <ul>
                 <li>
                     <strong>
                         <a href="../../logout.php" id="sair_do" >
-                            <span style="color: red;">
+                            <span style="color: #a5a58d;" id="spann_id">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                     class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
@@ -313,18 +351,17 @@ if (!isset($_SESSION['id_usuario'])) {
                 </li>
             </ul>
         </div>
-        <br>
-        <h2 class="center-text col-lg-pull-0" style="margin-top: 5%; text-align:center; ">Bem-vindo ao Sistema de Gestão
+        <h2 class="center-text col-lg-pull-0" style="margin-top: 5%; text-align:center; ">Sistema de Gestão
             de Requisições
             (SGR)</h2>
         <br>
-        <p style="text-transform: uppercase; font-weight: bold;">Olá, <?php echo $_SESSION['nome_usuario']; ?>, esta
-            janela reflete a todas Requisições feitas a nivel do sistema!</p>
+        <p style="text-transform: lowercase; font-weight: normal;" >Olá <?php echo $_SESSION['nome_usuario']; ?>, esta
+            janela reflete a todas Requisições feitas!</p>
         <!--Informando o nome do usuário logo que acessa o sistema-->
         <!--        <div class="col-md-5" id="outside">-->
         <!--            <strong><a href="../../logout.php">Sair</a></strong>-->
         <!--        </div>-->
-        <br><br><br>
+        <br>
         <div class="content-wrapper">
             <section class="content">
                 <div class="container-fluid">
@@ -436,15 +473,15 @@ if (!isset($_SESSION['id_usuario'])) {
             </section>
             <br><br><br>
         </div>
-        <div class="col-lg-12">
-            <div class="col-lg-8" id="requestmaster">
-                <button type="submit" id="requestmaster_button" class="btn btn-primary btn-block" onclick="location.href='admin.php'">Suas
-                    Requisições</button>
-            </div>
-        </div>
-        <br><br><br><br>
-        <div class="col-lg-18">
-            <table id="resquesting" class="display responsive nowrap" style="width:100%">
+<!--        <div class="col-lg-12">-->
+<!--            <div class="col-lg-8" id="requestmaster">-->
+<!--                <button type="submit" id="requestmaster_button" class="btn btn-primary btn-block" onclick="location.href='admin.php'">Suas-->
+<!--                    Requisições</button>-->
+<!--            </div>-->
+<!--        </div>-->
+        <br><br>
+        <div class="col-lg-14">
+            <table id="resquesting" class="display responsive nowrap" style="width:95%">
                 <thead>
                     <tr>
                         <th style="text-align: left;" >#</th>
@@ -453,9 +490,9 @@ if (!isset($_SESSION['id_usuario'])) {
                         <th style="text-align: left;" >Departamento</th>
                         <th>Estado</th>
                         <th>Action</th>
-                        <th>Prioridade</th>
-                        <th>Data de Emissão</th>
-                        <th>Data de Actualização</th>
+                        <th>Prioridade:</th>
+                        <th>Data de Emissão:</th>
+                        <th>Data de Actualização:</th>
                     </tr>
                     <?php $result = $u->allrequest(); ?>
                 </thead>
@@ -513,6 +550,8 @@ if (!isset($_SESSION['id_usuario'])) {
                 </tfoot>
             </table>
             <br><br>
+            <p style="color: #b7b7a4" ><strong>powered by Agência Criativa - 2021</strong></p>
+            <br>
         </div>
     </div>
 

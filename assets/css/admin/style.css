@@ -1,0 +1,240 @@
+body {
+    background-color: #C0D1C2;
+}
+/*aqui*/
+table thead tr th {
+    text-align: center !important;
+}
+table tbody tr td {
+    text-align: center !important;
+}
+div#RequestModal {
+    height: 100% !important;
+    overflow: hidden !important;
+
+}
+div.container div#outside {
+    width: 10% !important;
+    margin-top: 35px !important;
+    margin-left: 90% !important;
+    /*border: 1px solid red;*/
+}
+div#outside a {
+    font-size: 18px !important;
+    color: #a5a58d !important;
+    text-decoration: none !important;
+}
+
+div#outside a:hover{
+    color: red !important;
+}
+div#outside svg:hover{
+    color: red !important;
+}
+div.container p {
+    /*font-size: 9pt;*/
+    text-align: center !important;
+}
+div#requestmaster{
+    width: 250px !important;
+    margin-left: 28% !important;
+}
+div#requestmaster .btn{
+    width: 250px !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+}
+ul {
+    list-style-type: none !important;
+}
+div#resquesting_filter label{
+    text-align: left !important;
+}
+div.container button#allrequestmaster_button{
+    width: 180px !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+    margin-left: 70% !important;
+    margin-top: 50px !important;
+    /*border: 1px solid red;*/
+}
+@media screen and (max-width: 414px) {
+    div#dashboard{
+        padding: 5px;
+    }
+
+    div.container h2 {
+        font-size: 8pt;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    div.container p {
+        font-size: 7pt;
+        text-align: center;
+    }
+
+    div.col-lg-12 table {
+        width: auto;
+    }
+    div#req_star div#requestmaster{
+        width: 220px;
+        margin-left: 80px;
+        border-radius: 5px;
+    }
+    div#requestmaster{
+        width: 180px;
+        margin-left: 1%;
+        border-radius: 5px;
+        /*border: 2px solid red;*/
+    }
+    div#requestmaster button#requestmaster_button{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important; ;
+        width: 180px !important;
+        font-size: 12pt;
+        /*margin-left: -4% !important;*/
+        /*border: 1px solid red;*/
+    }
+
+    div.container button#allrequestmaster_button{
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+        width: 180px !important;
+        margin-left: 4%;
+        font-size: 10pt !important;
+        border: 1px solid red;
+    }
+
+    div.container div#outside{
+        margin-left: 70% !important;
+        width: 30% !important;
+    }
+    div#outside a#sair_do {
+        font-size: 12px !important;
+    }
+
+}
+@media screen and (max-width: 1024px){
+    div#dashboard{
+        padding: 5px;
+    }
+    div.container h2 {
+        font-size: 14pt;
+        font-weight: bold;
+        text-align: center;
+    }
+    div.container p {
+        font-size: 10pt;
+        text-align: center;
+    }
+    div.col-lg-12 table {
+        width: auto;
+    }
+    button#allrequestmaster_button{
+        width: 180px;
+        margin-left: 70%;
+        /*border: 1px solid red;*/
+    }
+    div#req_star div#requestmaster{
+        /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+
+        width: 220px;
+        /*padding-left: -20%;*/
+        border-radius: 10px;
+        /*border: 1px solid red;*/
+        margin-left: 0% !important;
+    }
+    div#requestmaster{
+        /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+
+        width: 200px !important;
+        /*padding-left: -20%;*/
+        border-radius: 10px;
+        /*border: 1px solid red;*/
+        margin-left: 26% !important;
+    }
+    div#requestmaster button#requestmaster_button{
+        width: 200px !important ;
+        /*border-radius: 20px;*/
+        /*box-shadow: black;*/
+        /*padding-right: 80%;*/
+    }
+    div#outside {
+        /*float: right;*/
+        width: 10%;
+        margin-top: 30px;
+        /*border: 1px solid red;*/
+    }
+    div#outside a {
+        /*margin-left: 60%;*/
+        font-size: 14px;
+    }
+
+}
+@media screen and (max-width: 990px){
+    div#dashboard{
+        padding: 5px !important;
+    }
+    div#req_star div#requestmaster{
+        width: 250px !important;
+        margin-left: 5% !important;
+        border-radius: 10px !important;
+    }
+   div.container button#allrequestmaster_button{
+        width: 180px !important;
+        margin-left: 50% !important;
+        font-size: 11pt !important;
+    }
+   div#requestmaster{
+       width: 250px !important;
+       margin-left: 1% !important;
+       border-radius: 10px !important;
+       /*border: 2px solid red;*/
+   }
+   div#requestmaster button#requestmaster_button{
+        width: 250px !important;
+        font-size: 11pt !important;
+        /*margin-left: -10% !important;*/
+       /*border: 1px solid red;*/
+
+    }
+    div#RequestModal{
+        overflow: scroll !important;
+    }
+   div.container div#outside {
+        width: 15% !important;
+        margin-left: 80% !important;
+        margin-top: 30px !important;
+    }
+    div#outside a{
+        margin-left: 0% !important;
+    }
+
+}
+@media screen and (max-width: 360px){
+    div#requestmaster{
+        /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+
+        width: 330px;
+        /*padding-left: -20%;*/
+        border-radius: 10px;
+        /*border: 1px solid red;*/
+    }
+    div.container button#allrequestmaster_button{
+        width: 180px !important;
+        margin-left: 4% !important;
+        font-size: 10pt !important;
+    }
+    div#requestmaster button#requestmaster_button{
+        width: 180px !important;
+        font-size: 10pt !important;
+        text-align: center !important;
+        margin-left: 1% !important;
+    }
+    div.container div#outside{
+        width: 25% !important;
+        margin-left: 70% !important;
+    }
+
+   div.container div#outside a {
+        margin-left: -1%;
+        font-size: 14px;
+    }
+}
