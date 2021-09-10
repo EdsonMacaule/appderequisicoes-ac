@@ -14,7 +14,7 @@ $u=new Usuario;
     <meta content="" name="description" />
     <meta content="" name="author" />
     <!--favicon-->
-    <link rel="icon" href="" type="image/x-icon" />
+    <link rel="icon" href="assets/img/favicon-32x32.png" type="image/x-icon" />
     <!--end favicon-->
     <!--Begin Plugins CSS-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
@@ -39,12 +39,27 @@ $u=new Usuario;
     }
 
     div.row.login-container.column-seperation {
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
         padding-top: 10%;
+        /*border: 1px solid red;*/
     }
 
     div.col-md-5.col-md-offset-1 {
         border-right: 3px solid #5f6775;
+        margin-right: 50px;
+        /*border: 1px solid white;*/
     }
+    div.col-md-5.col-md-offset-1 img{
+        margin-top: -20px;
+        /*border: 1px solid green;*/
+        padding: 10px;
+    }
+    /*div.col-md-5{*/
+    /*    border: 1px solid yellow;*/
+    /*}*/
+
 
     div#adduserModal {
         height: 70%;
@@ -53,11 +68,100 @@ $u=new Usuario;
 
     @media screen and (max-width: 414px) {
         div.row.login-container.column-seperation {
-            padding-top: 50%;
+            padding-top: 5% !important;
+        }
+        div.col-md-5.col-md-offset-1{
+            border-right: none !important;
+            margin-left: 10px;
+        }
+        div.col-md-5.col-md-offset-1 img{
+            /*padding: 2px;*/
+            padding-right: 40px !important;
+            margin-top: 0px;
+        }
+        div.col-md-5{
+            margin-left: 30px;
         }
 
         div#adduserModal {
             height: 85%;
+        }
+    }
+    @media screen and (max-width: 1024px){
+        div.row.login-container.column-seperation {
+            padding-top: 15%;
+        }
+        div.col-md-5.col-md-offset-1{
+            border-right: 2px solid #5f6775;
+            margin-left: 20px;
+        }
+        div.col-md-5.col-md-offset-1 img{
+            /*padding: 2px;*/
+            padding-right: 40px;
+            margin-top: -25px;
+        }
+
+        div#adduserModal {
+            height: 70%;
+        }
+    }
+    @media screen and (max-width: 990px){
+        div.row.login-container.column-seperation {
+            justify-content: normal;
+            align-items: normal;
+            padding: 20px;
+            padding-top: 20%;
+            /*border: 1px solid red;*/
+        }
+        div.col-md-5.col-md-offset-1{
+            border-right: 2px solid #5f6775;
+            margin-left: 20px;
+            /*border: 1px solid yellow;*/
+            height: 50%;
+        }
+        div.col-md-5.col-md-offset-1 img{
+            /*padding: 2px;*/
+            padding-right: 100px;
+            margin-top: -25px;
+        }
+
+        /*div.col-md-5{*/
+        /*    border: 1px solid red;*/
+        /*}*/
+
+        div.col-md-5 form input{
+            width: 280px;
+        }
+
+        div.col-md-5 form div#submeter{
+            margin-left: 22%;
+        }
+
+        div.col-md-5 form div.row div.col-md-10 button#login_form{
+            margin-top: 5%;
+        }
+
+        div#adduserModal {
+            height: 85%;
+        }
+    }
+    @media screen and (max-width: 360px){
+        div.row.login-container.column-seperation {
+            padding-top: 10%;
+        }
+        div.col-md-5.col-md-offset-1{
+            border-right: none;
+            margin-left: 0px;
+            /*border: 1px solid red;*/
+        }
+        div.col-md-5.col-md-offset-1 img{
+            /*border: 2px solid whitesmoke;*/
+            padding-right: 60px;
+            margin-top: 0px;
+        }
+
+        div#adduserModal {
+            height: 87%;
         }
     }
     </style>
@@ -130,10 +234,12 @@ $u=new Usuario;
     <!--End Modal submit Request-->
     <div id="form-group" class="container">
         <div class="row login-container column-seperation">
-            <div class="col-md-5 col-md-offset-1" style="margin-right: 50px">
-                <h1 style="font-size: 6.5em; font-family: 'Source Sans Pro', sans-serif;">
-                    SGPI
-                </h1>
+            <div class="col-md-5 col-md-offset-1">
+                <img src="assets/img/sgpi-01.png" alt="some text" width=320 height=200>
+<!--                <h1 style="font-size: 6.5em; font-family: 'Source Sans Pro', sans-serif;">-->
+<!--                    SGPI-->
+<!--                    -->
+<!--                </h1>-->
             </div>
             <hr>
             <hr>
@@ -165,7 +271,7 @@ $u=new Usuario;
                     <div class="alert alert-success hide" style="display: none">Seu Registo foi submetido com sucesso
                     </div> -->
                     <div class="row">
-                        <div class="col-md-10">
+                        <div class="col-md-10" id="submeter">
                             <button class="btn btn-primary btn-cons pull-right" type="submit" name="login_form"
                                 id="login_form" onclick="location.href='home.php'">Iniciar</button>
                         </div>

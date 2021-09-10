@@ -30,6 +30,7 @@ $u = new Usuario;
     <!--SweetAlert-->
     <link href="../../../assets/plugins/sweetalert/dist/sweetalert2.min.css">
     <!--End SweetAlert-->
+    <link rel="icon" href="../../../assets/img/favicon-32x32.png" type="image/x-icon" />
     <!-- BEGIN CORE CSS FRAMEWORK -->
     <link href="../../../webarch/css/webarch.css" rel="stylesheet" type="text/css" />
     <!-- END CORE CSS FRAMEWORK -->

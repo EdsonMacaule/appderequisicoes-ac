@@ -13,9 +13,7 @@ $u = new Usuario;
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content="" name="description" />
     <meta content="" name="author" />
-    <!--favicon-->
-    <link rel="icon" href="" type="image/x-icon" />
-    <!--end favicon-->
+    <link rel="icon" href="../../assets/img/favicon-32x32.png" type="image/x-icon" />
 
     <!--Begin Plugins CSS-->
     <link href="../../assets/plugins/bootstrapv3/css/bootstrap.min.css" rel="stylesheet" type="text/css" />

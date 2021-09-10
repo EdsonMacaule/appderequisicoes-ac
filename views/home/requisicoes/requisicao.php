@@ -15,7 +15,7 @@ $u = new Usuario;
     <meta content="" name="description" />
     <meta content="" name="author" />
     <!--favicon-->
-    <link rel="icon" href="" type="image/x-icon" />
+    <link rel="icon" href="../../../assets/img/favicon-32x32.png" type="image/x-icon" />
     <!--end favicon-->
 
     <!--Begin Plugins CSS-->
