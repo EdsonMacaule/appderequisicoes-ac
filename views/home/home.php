@@ -24,33 +24,33 @@ if (!isset($_SESSION['id_usuario'])) {
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <link rel="icon" href="../../assets/img/favicon-32x32.png" type="image/x-icon" />
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap.min.js" ></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js" ></script>
-    <script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js" ></script>
+    <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
     <title>SGPI - gerenciamos os seus pedidos</title>
     <script>
-        $(document).ready(function() {
-            $('#resquesting').DataTable( {
-                "language": {
-                    "search": "Pesquisar:",
-                    "Next": "Próximo",
-                    "lengthMenu": "Mostrar _MENU_ por página",
-                    "zeroRecords": "Nada foi encontrado - desculpe",
-                    "info": "Página _PAGE_ de _PAGES_",
-                    "infoEmpty": "Nenhuma requisição disponivel",
-                    "infoFiltered": "(filtered from _MAX_ total records)"
+    $(document).ready(function() {
+        $('#resquesting').DataTable({
+            "language": {
+                "search": "Pesquisar:",
+                "Next": "Próximo",
+                "lengthMenu": "Mostrar _MENU_ por página",
+                "zeroRecords": "Nada foi encontrado - desculpe",
+                "info": "Página _PAGE_ de _PAGES_",
+                "infoEmpty": "Nenhuma requisição disponivel",
+                "infoFiltered": "(filtered from _MAX_ total records)"
 
-                },
+            },
 
-            } );
+        });
 
-        } );
+    });
     </script>
 </head>
 
@@ -59,23 +59,29 @@ if (!isset($_SESSION['id_usuario'])) {
     body {
         background-color: #C0D1C2 !important;
     }
+
     table thead tr th {
         text-align: center !important;
     }
+
     table tbody tr td {
         text-align: center !important;
     }
+
     table#resquesting tbody tr td button a:link {
         text-decoration: none !important;
     }
+
     table#resquesting tbody tr td button a:hover {
         color: white !important;
     }
+
     div#statusModal {
         height: 100% !important;
         overflow: hidden !important;
 
     }
+
     div#outside {
         /*float: right;*/
         /*border: 1px solid red;*/
@@ -83,6 +89,7 @@ if (!isset($_SESSION['id_usuario'])) {
         margin-top: -35px !important;
         margin-left: 90% !important;
     }
+
     div#outside a {
         /*margin-left: 30%;*/
         font-size: 18px !important;
@@ -92,38 +99,42 @@ if (!isset($_SESSION['id_usuario'])) {
         /*padding-top: -10%;*/
     }
 
-    div#outside a:hover{
+    div#outside a:hover {
         color: red !important;
     }
-    div#outside svg:hover{
+
+    div#outside svg:hover {
         color: red !important;
     }
+
     div.container p {
         /*font-size: 9pt;*/
         text-align: center !important;
     }
+
     /*div#requestmaster{*/
     /*    !*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*!*/
     /*    margin-left: 20%;*/
     /*    width: 180px;*/
     /*    margin-top: 50px;*/
     /*}*/
-    button#requestmaster_button{
+    button#requestmaster_button {
         width: 180px !important;
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
-        margin-left: 70% !important;
+        margin-left: 77% !important;
         margin-top: 50px !important;
     }
 
     ul {
         list-style-type: none !important;
     }
-    div#resquesting_filter label{
+
+    div#resquesting_filter label {
         text-align: left !important;
     }
 
     @media screen and (max-width: 414px) {
-        div#dashboard{
+        div#dashboard {
             padding: 5px !important;
         }
 
@@ -141,6 +152,7 @@ if (!isset($_SESSION['id_usuario'])) {
         div.col-lg-12 table {
             width: auto !important;
         }
+
         /*div#requestmaster{*/
         /*    !*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*!*/
         /*    width: 350px;*/
@@ -148,19 +160,20 @@ if (!isset($_SESSION['id_usuario'])) {
         /*    border-radius: 5px;*/
         /*    !*border: 1px solid #444;*!*/
         /*}*/
-        button#requestmaster_button{
+        div.container button#requestmaster_button {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
             width: 180px !important;
             /*box-shadow: black;*/
-            margin-left: 0% !important;
+            margin-left: 35% !important;
             /*border: 1px solid red;*/
         }
 
-        div#outside{
+        div#outside {
             margin-left: 70% !important;
             width: 25% !important;
             /*border: 1px solid red;*/
         }
+
         div#outside a#sair_do {
             margin-left: 0% !important;
             font-size: 12px !important;
@@ -169,22 +182,27 @@ if (!isset($_SESSION['id_usuario'])) {
 
 
     }
-    @media screen and (max-width: 1024px){
-        div#dashboard{
+
+    @media screen and (max-width: 1024px) {
+        div#dashboard {
             padding: 5px;
         }
+
         div.container h2 {
             font-size: 14pt;
             font-weight: bold;
             text-align: center;
         }
+
         div.container p {
             font-size: 10pt;
             text-align: center;
         }
+
         div.col-lg-12 table {
             width: auto;
         }
+
         /*div#requestmaster{*/
         /*    !*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*!*/
 
@@ -193,27 +211,29 @@ if (!isset($_SESSION['id_usuario'])) {
         /*    border-radius: 10px;*/
         /*    !*border: 1px solid red;*!*/
         /*}*/
-        button#requestmaster_button{
+        button#requestmaster_button {
             width: 180px;
-            /*border-radius: 20px;*/
-            /*box-shadow: black;*/
-            /*padding-right: 80%;*/
+            margin-left: 72% !important;
         }
+
         div#outside {
             /*float: right;*/
             width: 10%;
             margin-top: -30px;
         }
+
         div#outside a {
             /*margin-left: 60%;*/
             font-size: 14px;
         }
 
     }
-    @media screen and (max-width: 990px){
-        div#dashboard{
+
+    @media screen and (max-width: 990px) {
+        div#dashboard {
             padding: 5px;
         }
+
         /*div#requestmaster{*/
         /*    !*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*!*/
 
@@ -222,13 +242,14 @@ if (!isset($_SESSION['id_usuario'])) {
         /*    border-radius: 10px;*/
         /*    !*border: 1px solid red;*!*/
         /*}*/
-        button#requestmaster_button{
+        button#requestmaster_button {
             width: 180px;
-            margin-left: 0% !important;
+            margin-left: 57% !important;
             /*border-radius: 20px;*/
             /*box-shadow: black;*/
             /*padding-right: 80%;*/
         }
+
         div#outside {
             /*float: right;*/
             width: 20% !important;
@@ -237,7 +258,8 @@ if (!isset($_SESSION['id_usuario'])) {
         }
 
     }
-    @media screen and (max-width: 360px){
+
+    @media screen and (max-width: 360px) {
         /*div#requestmaster{*/
         /*    !*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*!*/
 
@@ -246,18 +268,21 @@ if (!isset($_SESSION['id_usuario'])) {
         /*    border-radius: 10px;*/
         /*    !*border: 1px solid red;*!*/
         /*}*/
-        button#requestmaster_button{
+        div.container button#requestmaster_button {
             width: 180px;
-            margin-left: 10%;
+            margin-left: 15% !important;
             /*border-radius: 20px;*/
             /*box-shadow: black;*/
             /*padding-right: 80%;*/
         }
-       div.container div#outside{
-            width: 30% !important; ;
+
+        div.container div#outside {
+            width: 30% !important;
+            ;
             margin-left: 65% !important;
             /*border: 1px solid red;*/
         }
+
         div#outside a {
             /*margin-left: -1%;*/
             font-size: 14px;
@@ -271,9 +296,9 @@ if (!isset($_SESSION['id_usuario'])) {
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="statusModalLabel">Alterar o estado e prioridade da requisição</h5>
-<!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-<!--                        <span aria-hidden="true">&times;</span>-->
-<!--                    </button>-->
+                    <!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                    <!--                        <span aria-hidden="true">&times;</span>-->
+                    <!--                    </button>-->
                 </div>
                 <form method="POST" action="status.php">
                     <div class="modal-body">
@@ -291,7 +316,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <?php endforeach; ?>
                             </select>
                         </div>
-                        <div class="form-group" style="padding-bottom: 10px" >
+                        <div class="form-group" style="padding-bottom: 10px">
                             <label for="" style="font-weight: bold">Escolha a prioridade</label>
                             <?php $result = $u->prioridade(); ?>
                             <select name="prioridade_id" id="prioridade_id" class="form-control">
@@ -303,7 +328,7 @@ if (!isset($_SESSION['id_usuario'])) {
                             </select>
                         </div>
                         <!--                        <input type="text" class="form-control" name="estado" id="estado" value=""  disabled >-->
-                        <div class="form-group" style="padding-bottom: 10px" >
+                        <div class="form-group" style="padding-bottom: 10px">
                             <label for="" style="font-weight: bold">Escolha o estado</label>
                             <?php $result = $u->status_request(); ?>
                             <select name="update_estado" id="update_estado" class="form-control">
@@ -315,10 +340,12 @@ if (!isset($_SESSION['id_usuario'])) {
                             </select>
                         </div>
                     </div>
-                    <div class="alert alert-error hide" style="display:none; color: red">Erro de actualização, o estado deve ser
+                    <div class="alert alert-error hide" style="display:none; color: red">Erro de actualização, o estado
+                        deve ser
                         diferente do actual!
                     </div>
-                    <div class="alert alert-success hide" style="display:none; color: green ">Estado e prioridade actualizados com sucesso</div>
+                    <div class="alert alert-success hide" style="display:none; color: green ">Estado e prioridade
+                        actualizados com sucesso</div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
                         <button type="submit" class="btn btn-primary" id="update_form"
@@ -331,12 +358,13 @@ if (!isset($_SESSION['id_usuario'])) {
     <!--End Modal Update Status-->
     <div class="container" style="background-color: whitesmoke;height: auto; ">
 
-        <button type="submit" id="requestmaster_button" class="btn btn-primary btn-block" onclick="location.href='admin.php'">Minhas Requisições</button>
+        <button type="submit" id="requestmaster_button" class="btn btn-primary btn-block"
+            onclick="location.href='admin.php'">Minhas Requisições</button>
         <div class="col-md-5" id="outside">
             <ul>
                 <li>
                     <strong>
-                        <a href="../../logout.php" id="sair_do" >
+                        <a href="../../logout.php" id="sair_do">
                             <span style="color: #a5a58d;" id="spann_id">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
                                     class="bi bi-box-arrow-right" viewBox="0 0 16 16">
@@ -356,7 +384,7 @@ if (!isset($_SESSION['id_usuario'])) {
             de Requisições
             (SGR)</h2>
         <br>
-        <p style="text-transform: lowercase; font-weight: normal;" >Olá <?php echo $_SESSION['nome_usuario']; ?>, esta
+        <p style="text-transform: lowercase; font-weight: normal;">Olá <?php echo $_SESSION['nome_usuario']; ?>, esta
             janela reflete a todas Requisições feitas!</p>
         <!--Informando o nome do usuário logo que acessa o sistema-->
         <!--        <div class="col-md-5" id="outside">-->
@@ -474,21 +502,21 @@ if (!isset($_SESSION['id_usuario'])) {
             </section>
             <br><br><br>
         </div>
-<!--        <div class="col-lg-12">-->
-<!--            <div class="col-lg-8" id="requestmaster">-->
-<!--                <button type="submit" id="requestmaster_button" class="btn btn-primary btn-block" onclick="location.href='admin.php'">Suas-->
-<!--                    Requisições</button>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--        <div class="col-lg-12">-->
+        <!--            <div class="col-lg-8" id="requestmaster">-->
+        <!--                <button type="submit" id="requestmaster_button" class="btn btn-primary btn-block" onclick="location.href='admin.php'">Suas-->
+        <!--                    Requisições</button>-->
+        <!--            </div>-->
+        <!--        </div>-->
         <br><br>
         <div class="col-lg-14">
-            <table id="resquesting" class="display responsive nowrap" style="width:95%">
+            <table id="resquesting" class="display responsive nowrap" style="width:98%">
                 <thead>
                     <tr>
-                        <th style="text-align: left;" >#</th>
-                        <th style="text-align: left;" >Descrição </th>
-                        <th style="text-align: left;" >Remetente</th>
-                        <th style="text-align: left;" >Departamento</th>
+                        <th style="text-align: left;">#</th>
+                        <th style="text-align: left;">Descrição </th>
+                        <th style="text-align: left;">Remetente</th>
+                        <th style="text-align: left;">Departamento</th>
                         <th>Estado</th>
                         <th>Action</th>
                         <th>Prioridade:</th>
@@ -500,10 +528,10 @@ if (!isset($_SESSION['id_usuario'])) {
                 <tbody>
                     <?php $con=1; foreach ($result as $row): ?>
                     <tr>
-                        <td style="text-align: center;" scope="row" ><?php echo $con; ?></td>
+                        <td style="text-align: center;" scope="row"><?php echo $con; ?></td>
                         <td style="text-align: left;"><?php echo $row["descricao_pedido"]; ?></td>
-                        <td style="text-align: left;" ><?php echo $row["nome_utilizador"]; ?></td>
-                        <td style="text-align: left;" ><?php echo $row["nome_departamento"]; ?></td>
+                        <td style="text-align: left;"><?php echo $row["nome_utilizador"]; ?></td>
+                        <td style="text-align: left;"><?php echo $row["nome_departamento"]; ?></td>
                         <td><?php echo ($row["nome_estado"]==1 ? '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle" viewBox="0 0 16 16"
                                         style="margin-left: 20px; padding-top: 5px;" color="#d62839">
@@ -524,10 +552,12 @@ if (!isset($_SESSION['id_usuario'])) {
                                             d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z" />
                                         <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z" />
                                     </svg>'))); ?></td>
-                        <td><button class="btn btn-primary"><a href="home.php#statusModal" id_pedido="<?php echo $row["id_pedido"]; ?>"
-                                nome_estado="<?php echo  $row["nome_estado"];?>"
-                                prioridade="<?php echo $row["nome_prioridade"]; ?>" class="badge badge-info edit_btn "
-                                data-toggle="modal" data-target="#statusModal" style="font-size: 14px;">Editar</a></button>
+                        <td><button class="btn btn-primary"><a href="home.php#statusModal"
+                                    id_pedido="<?php echo $row["id_pedido"]; ?>"
+                                    nome_estado="<?php echo  $row["nome_estado"];?>"
+                                    prioridade="<?php echo $row["nome_prioridade"]; ?>"
+                                    class="badge badge-info edit_btn " data-toggle="modal" data-target="#statusModal"
+                                    style="font-size: 14px;">Editar</a></button>
                         </td>
                         <td><?php echo ($row["nome_prioridade"] == 1 ? '<button class=" btn btn-success"  >Baixa</button>' : ($row["nome_prioridade"] == 2 ? '<button class="btn btn-primary" >Media</button>' : '<button class="btn btn-danger" >Alta</button>')); ?>
                         </td>
@@ -539,9 +569,9 @@ if (!isset($_SESSION['id_usuario'])) {
                 <tfoot>
                     <tr>
                         <th>#</th>
-                        <th style="text-align: left;" >Descrição </th>
-                        <th style="text-align: left;" >Remetente</th>
-                        <th style="text-align: left;" >Departamento</th>
+                        <th style="text-align: left;">Descrição </th>
+                        <th style="text-align: left;">Remetente</th>
+                        <th style="text-align: left;">Departamento</th>
                         <th>Estado</th>
                         <th>Action</th>
                         <th>Prioridade</th>
@@ -551,7 +581,7 @@ if (!isset($_SESSION['id_usuario'])) {
                 </tfoot>
             </table>
             <br><br>
-            <p style="color: #b7b7a4" ><strong>powered by Agência Criativa - 2021</strong></p>
+            <p style="color: #b7b7a4"><strong>powered by Agência Criativa - 2021</strong></p>
             <br>
         </div>
     </div>
