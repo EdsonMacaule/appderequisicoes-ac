@@ -373,6 +373,8 @@ if (!isset($_SESSION['id_usuario'])) {
                 </tfoot>
             </table>
             <br><br>
+            <p style="color: #b7b7a4"><strong>powered by Agência Criativa - 2021</strong></p>
+            <br>
         </div>
     </div>
 
