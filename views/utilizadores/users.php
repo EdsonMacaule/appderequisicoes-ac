@@ -23,7 +23,7 @@ if (!isset($_SESSION['id_usuario'])) {
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+        integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="stylesheet" href="../../assets/css/admin/style.css">
     <!--favicon-->
     <link rel="icon" href="../../assets/img/favicon-32x32.png" type="image/x-icon" />
@@ -32,132 +32,138 @@ if (!isset($_SESSION['id_usuario'])) {
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap.min.js" ></script>
-    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js" ></script>
-    <script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js" ></script>
+    <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+    <script src="https://cdn.datatables.net/rowreorder/1.2.8/js/dataTables.rowReorder.min.js"></script>
     <title>SGPI - gerenciamos os seus pedidos</title>
     <script>
-        $(document).ready(function() {
-            $('#resquesting').DataTable( {
-                "language": {
-                    "search": "Pesquisar:",
-                    "Next": "Próximo",
-                    "lengthMenu": "Mostrar _MENU_ por página",
-                    "zeroRecords": "Nada foi encontrado - desculpe",
-                    "info": "Página _PAGE_ de _PAGES_",
-                    "infoEmpty": "Nenhuma requisição disponivel",
-                    "infoFiltered": "(filtered from _MAX_ total records)"
+    $(document).ready(function() {
+        $('#resquesting').DataTable({
+            "language": {
+                "search": "Pesquisar:",
+                "Next": "Próximo",
+                "lengthMenu": "Mostrar _MENU_ por página",
+                "zeroRecords": "Nada foi encontrado - desculpe",
+                "info": "Página _PAGE_ de _PAGES_",
+                "infoEmpty": "Nenhuma requisição disponivel",
+                "infoFiltered": "(filtered from _MAX_ total records)"
 
-                },
+            },
 
-            } );
+        });
 
-        } );
+    });
     </script>
 </head>
 
 <body>
-<!-- Start Css-->
-<!--<style>-->
-<!--div.container div#outside{-->
-<!--    margin-top: 20px !important;-->
-<!--    border: 1px solid red;-->
-<!--}-->
-<!--</style>-->
-<!--End Css-->
-<!-- Start Modal submit Request-->
-<div class="modal fade bd-example-modal-sm" id="RequestModal" tabindex="-1" role="dialog"
-     aria-labelledby="RequestModalCenterTitle" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="RequestModalLabel">Submeter nova requisição</h5>
-                <!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
-                <!--                        <span aria-hidden="true">&times;</span>-->
-                <!--                    </button>-->
-            </div>
-            <form method="POST" action="../../controllers/utilizador/olderuser.php">
-                <div class="modal-body">
-                    <div class="form-group" style="padding-bottom: 10px" >
-                        <label for="exampleFormControlTextarea1" style="color: #444; font-weight: bold ">Escreva seu pedido</label>
-                        <textarea class="form-control" id="nome_pedido" name="nome_pedido" rows="2"></textarea>
-                    </div>
+    <!-- Start Css-->
+    <!--<style>-->
+    <!--div.container div#outside{-->
+    <!--    margin-top: 20px !important;-->
+    <!--    border: 1px solid red;-->
+    <!--}-->
+    <!--</style>-->
+    <!--End Css-->
+    <!-- Start Modal submit Request-->
+    <div class="modal fade bd-example-modal-sm" id="RequestModal" tabindex="-1" role="dialog"
+        aria-labelledby="RequestModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="RequestModalLabel">Submeter nova requisição</h5>
+                    <!--                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+                    <!--                        <span aria-hidden="true">&times;</span>-->
+                    <!--                    </button>-->
+                </div>
+                <form method="POST" action="../../controllers/utilizador/olderuser.php">
+                    <div class="modal-body">
+                        <div class="form-group" style="padding-bottom: 10px">
+                            <label for="exampleFormControlTextarea1" style="color: #444; font-weight: bold ">Escreva seu
+                                pedido</label>
+                            <textarea class="form-control" id="nome_pedido" name="nome_pedido" rows="2"></textarea>
+                        </div>
 
-                    <div class="form-group" style="padding-bottom: 10px" >
-                        <label for="exampleFormControlInput1" style="color: #444; font-weight: bold">Remetente</label>
+                        <div class="form-group" style="padding-bottom: 10px">
+                            <label for="exampleFormControlInput1"
+                                style="color: #444; font-weight: bold">Remetente</label>
 
-                        <input type="email" class="form-control" id="exampleFormControlInput1"
-                               placeholder="<?php echo $_SESSION['nome_usuario']; ?> "
-                               style="text-transform: uppercase; font-weight: bold;" disabled>
+                            <input type="email" class="form-control" id="exampleFormControlInput1"
+                                placeholder="<?php echo $_SESSION['nome_usuario']; ?> "
+                                style="text-transform: uppercase; font-weight: bold;" disabled>
 
-                    </div>
-                    <div class="form-group" style="color: #444; font-weight: bold; display: none;">
-                        <label for="exampleFormControlInput1" style="color: black;">Remetente</label>
+                        </div>
+                        <div class="form-group" style="color: #444; font-weight: bold; display: none;">
+                            <label for="exampleFormControlInput1" style="color: black;">Remetente</label>
 
-                        <select class="form-control" name="id_utilizador" id="id_utilizador">
-                            <option class="optionnivel" value="<?php echo $_SESSION['id_usuario']; ?>">
-                        </select>
+                            <select class="form-control" name="id_utilizador" id="id_utilizador">
+                                <option class="optionnivel" value="<?php echo $_SESSION['id_usuario']; ?>">
+                            </select>
 
-                    </div>
-                    <div class="form-group" style="padding-bottom: 10px" >
-                        <label for="exampleFormControlSelect1" style="color: #444; font-weight: bold ">Qual é o seu
-                            departamento?</label>
-                        <!--                    <select class="form-control" id="exampleFormControlSelect1">-->
-                        <?php $result = $u->departamento(); ?>
-                        <select class="form-control" name="id_departamento" id="id_departamento">
-                            <?php foreach ($result as $row): ?>
-                            <option class="optionnivel" value="<?php echo $row["id_departamento"];?>">
-                                <?php echo $row["nome_departamento"]; ?></option><?php endforeach; ?>
-                        </select>
-                    </div>
-                    <div class="form-group" style="padding-bottom: 10px;" >
-                        <label for="exampleFormControlSelect1" style="color: #444; font-weight: bold ">Estado do pedido</label>
-                        <select class="form-control" id="id_estado" name="id_estado"
+                        </div>
+                        <div class="form-group" style="padding-bottom: 10px">
+                            <label for="exampleFormControlSelect1" style="color: #444; font-weight: bold ">Qual é o seu
+                                departamento?</label>
+                            <!--                    <select class="form-control" id="exampleFormControlSelect1">-->
+                            <?php $result = $u->departamento(); ?>
+                            <select class="form-control" name="id_departamento" id="id_departamento">
+                                <?php foreach ($result as $row): ?>
+                                <option class="optionnivel" value="<?php echo $row["id_departamento"];?>">
+                                    <?php echo $row["nome_departamento"]; ?></option><?php endforeach; ?>
+                            </select>
+                        </div>
+                        <div class="form-group" style="padding-bottom: 10px;">
+                            <label for="exampleFormControlSelect1" style="color: #444; font-weight: bold ">Estado do
+                                pedido</label>
+                            <select class="form-control" id="id_estado" name="id_estado"
                                 aria-label="Disabled select example" disabled>
-                            <option value="1" selected>Pedendete</option>
-                            <option value="2">Em revisão</option>
-                            <option value="3">Aprovado</option>
-                            <option value="4">Feito</option>
-                        </select>
-                    </div>
-                    <div class="form-group" style="padding-bottom: 10px" >
-                        <label for="exampleFormControlSelect1" style="color: #444; font-weight: bold ">Qual é a prioridade do seu
-                            pedido?</label>
-                        <select class="form-control" id="id_prioridade" name="id_prioridade"
+                                <option value="1" selected>Pedendete</option>
+                                <option value="2">Em revisão</option>
+                                <option value="3">Aprovado</option>
+                                <option value="4">Feito</option>
+                            </select>
+                        </div>
+                        <div class="form-group" style="padding-bottom: 10px">
+                            <label for="exampleFormControlSelect1" style="color: #444; font-weight: bold ">Qual é a
+                                prioridade do seu
+                                pedido?</label>
+                            <select class="form-control" id="id_prioridade" name="id_prioridade"
                                 aria-label="Disabled select example">
-                            <option value="1" selected>Baixa</option>
-                            <option value="2">Media</option>
-                            <option value="3">Alta</option>
-                        </select>
+                                <option value="1" selected>Baixa</option>
+                                <option value="2">Media</option>
+                                <option value="3">Alta</option>
+                            </select>
+                        </div>
                     </div>
-                </div>
-                <div class="alert alert-error hide" style="display: none; color: red" >Erro de registo, verifique se todos campos estão devidamente
-                    preenchidos!</div>
-                <div class="alert alert-success hide" style="display: none; color: green " >Sua requisição foi submetida com sucesso</div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                    <button type="submit" class="btn btn-primary" id="submeter_form"
+                    <div class="alert alert-error hide" style="display: none; color: red">Erro de registo, verifique se
+                        todos campos estão devidamente
+                        preenchidos!</div>
+                    <div class="alert alert-success hide" style="display: none; color: green ">Sua requisição foi
+                        submetida com sucesso</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary" id="submeter_form"
                             name="submeter_form">Submeter</button>
-                </div>
-            </form>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-<!--End Modal submit Request-->
+    <!--End Modal submit Request-->
     <div class="container" style="background-color: whitesmoke;height: auto; width: auto;">
         &nbsp;
         <div class="col-md-5" id="outside">
             <ul>
                 <li>
                     <strong>
-                        <a href="../../logout.php" id="sair_do" >
+                        <a href="../../logout.php" id="sair_do">
                             <span style="color: #a5a58d;" id="spann_id">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
-                                     class="bi bi-box-arrow-right" viewBox="0 0 16 16">
+                                    class="bi bi-box-arrow-right" viewBox="0 0 16 16">
                                     <path fill-rule="evenodd"
-                                          d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                                        d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
                                     <path fill-rule="evenodd"
-                                          d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                                        d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
 
                                 </svg>
                             </span>
@@ -167,14 +173,15 @@ if (!isset($_SESSION['id_usuario'])) {
             </ul>
         </div>
         <br>
-        <h2 class="center-text col-lg-pull-0" style="margin-top: 5%; text-align:center;">Sistema de Gestão de Requisições - Usuário</h2>
+        <h2 class="center-text col-lg-pull-0" style="margin-top: 5%; text-align:center;">Sistema de Gestão de
+            Requisições - Usuário</h2>
         <br>
-        <p style="text-transform: lowercase;">Olá <?php echo $_SESSION['nome_usuario']; ?>, Nesta
+        <p style="text-transform: initial;">Olá <?php echo $_SESSION['nome_usuario']; ?>, Nesta
             Janela tem todas suas requisições!</p>
         <!--Informando o nome do usuário logo que acessa o sistema-->
-<!--        <div class="col-md-5" id="outside">-->
-<!--            <a href="../../logout.php">Sair</a>-->
-<!--        </div>-->
+        <!--        <div class="col-md-5" id="outside">-->
+        <!--            <a href="../../logout.php">Sair</a>-->
+        <!--        </div>-->
         <!--    --><?php //echo $_SESSION['id_usuario']; ?>
         <br><br><br>
         <div class="content-wrapper">
@@ -182,10 +189,10 @@ if (!isset($_SESSION['id_usuario'])) {
                 <div class="container-fluid">
                     <!-- Small boxes (Stat box) -->
                     <div class="row">
-                        <div class="col-lg-3 col-6" id="dashboard" >
+                        <div class="col-lg-3 col-6" id="dashboard">
                             <!-- small box -->
                             <div class="small-box bg-info"
-                                 style=" border-radius: 10px; background:linear-gradient(#d62839 70%,whitesmoke 50%);">
+                                style=" border-radius: 10px; background:linear-gradient(#d62839 70%,whitesmoke 50%);">
                                 <div class="inner" style=" border-radius: 5px;">
                                     <?php $id_utilizador=$_SESSION['id_usuario'];  $result= $u->pedidos_pedentes_usuario($id_utilizador); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm;text-align: center;">
@@ -197,20 +204,20 @@ if (!isset($_SESSION['id_usuario'])) {
                                 </div>
                                 <div class="icon" style="background-color: #d62839;border-radius: 5px; padding: 1mm; ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                         class="bi bi-circle" viewBox="0 0 16 16"
-                                         style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
+                                        class="bi bi-circle" viewBox="0 0 16 16"
+                                        style="margin-left: 20px; padding-top: 5px; padding:3px;" color="#ffffff">
                                         <path
-                                                d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                            d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                     </svg>
                                 </div>
                                 <!--                            <a href="#" class="small-box-footer">Mais informações</a>-->
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6" id="dashboard" >
+                        <div class="col-lg-3 col-6" id="dashboard">
                             <!-- small box -->
                             <div class="small-box bg-success"
-                                 style=" border-radius: 10px;background: linear-gradient(#ffd100 70%,whitesmoke 50%);">
+                                style=" border-radius: 10px;background: linear-gradient(#ffd100 70%,whitesmoke 50%);">
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $id_utilizador=$_SESSION['id_usuario'];  $result= $u->reviw_older_user($id_utilizador); ?>
                                     <h3 style="color: #444; padding: 0.5mm; padding-top: 3mm; text-align: center;">
@@ -222,8 +229,8 @@ if (!isset($_SESSION['id_usuario'])) {
                                 </div>
                                 <div class="icon" style=" background-color: #ffd100; border-radius: 5px ;padding: 1mm;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                         class="bi bi-circle-half" viewBox="0 0 16 16"
-                                         style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
+                                        class="bi bi-circle-half" viewBox="0 0 16 16"
+                                        style="margin-left: 20px; padding-top: 5px; padding:2px;" color="#ffffff">
                                         <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
                                     </svg>
                                 </div>
@@ -231,10 +238,10 @@ if (!isset($_SESSION['id_usuario'])) {
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6" id="dashboard" >
+                        <div class="col-lg-3 col-6" id="dashboard">
                             <!-- small box -->
                             <div class="small-box bg-warning"
-                                 style="border-radius: 10px; background:linear-gradient(#38b000 70%,whitesmoke 50%);">
+                                style="border-radius: 10px; background:linear-gradient(#38b000 70%,whitesmoke 50%);">
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $id_utilizador=$_SESSION['id_usuario'];  $result= $u->older_user_aprov($id_utilizador); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm; text-align: center;">
@@ -246,8 +253,8 @@ if (!isset($_SESSION['id_usuario'])) {
                                 </div>
                                 <div class="icon" style=" background-color: #38b000; border-radius: 5px ;padding: 1mm;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                         class="bi bi-circle-fill" viewBox="0 0 16 16"
-                                         style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
+                                        class="bi bi-circle-fill" viewBox="0 0 16 16"
+                                        style="margin-left: 20px; padding-top: 5px; padding:2px; " color="#ffffff">
                                         <circle cx="8" cy="8" r="8" />
                                     </svg>
                                 </div>
@@ -255,10 +262,10 @@ if (!isset($_SESSION['id_usuario'])) {
                             </div>
                         </div>
                         <!-- ./col -->
-                        <div class="col-lg-3 col-6" id="dashboard" >
+                        <div class="col-lg-3 col-6" id="dashboard">
                             <!-- small box -->
                             <div class="small-box bg-danger"
-                                 style="border-radius: 5px; background:linear-gradient(#386fa4 70%,whitesmoke 50%)">
+                                style="border-radius: 5px; background:linear-gradient(#386fa4 70%,whitesmoke 50%)">
                                 <div class="inner" style="border-radius: 5px;">
                                     <?php $id_utilizador=$_SESSION['id_usuario'];  $result= $u->older_user_done($id_utilizador); ?>
                                     <h3 style="color: white; padding: 0.5mm; padding-top: 3mm; text-align: center;">
@@ -270,10 +277,10 @@ if (!isset($_SESSION['id_usuario'])) {
                                 </div>
                                 <div class="icon" style="background-color: #386fa4;border-radius: 5px;padding: 1mm;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
-                                         class="bi bi-check2-all" viewBox="0 0 16 16"
-                                         style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
+                                        class="bi bi-check2-all" viewBox="0 0 16 16"
+                                        style="margin-left: 20px; padding-top: 5px; padding:1px; " color="#ffffff">
                                         <path
-                                                d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z" />
+                                            d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z" />
                                         <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z" />
                                     </svg>
                                 </div>
@@ -302,13 +309,13 @@ if (!isset($_SESSION['id_usuario'])) {
         <h4 style="color: #606060; text-transform: uppercase; font-size: 12pt;"><strong>Veja a baixo as suas
                 requisições</strong></h4>
         <div class="col-lg-18">
-            <table id="resquesting" class="display responsive nowrap" style="width:100%">
+            <table id="resquesting" class="display responsive nowrap" style="width:98%">
                 <thead>
                     <tr>
                         <th>#</th>
-                        <th style="text-align: left;" >Descrição </th>
-                        <th style="text-align: left;" >Remetente</th>
-                        <th style="text-align: left;" >Departamento</th>
+                        <th style="text-align: left;">Descrição </th>
+                        <th style="text-align: left;">Remetente</th>
+                        <th style="text-align: left;">Departamento</th>
                         <th>Estado</th>
                         <th>Prioridade</th>
                         <th>Data de Emissão</th>
@@ -321,9 +328,9 @@ if (!isset($_SESSION['id_usuario'])) {
                     <tr>
                         <td scope="row"><?php echo $con; ?></td>
                         <td style="text-align: left;"><?php echo $row["descricao_pedido"]; ?></td>
-                        <td style="text-align: left;" ><?php echo $row["nome_utilizador"]; ?></td>
-                        <td style="text-align: left;" ><?php echo $row["nome_departamento"]; ?></td>
-                        <td  ><?php echo ($row["nome_estado"]==1 ? '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+                        <td style="text-align: left;"><?php echo $row["nome_utilizador"]; ?></td>
+                        <td style="text-align: left;"><?php echo $row["nome_departamento"]; ?></td>
+                        <td><?php echo ($row["nome_estado"]==1 ? '<svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle" viewBox="0 0 16 16"
                                         style="margin-left: 20px; padding-top: 5px;" color="#d62839">
                                         <path
@@ -353,29 +360,29 @@ if (!isset($_SESSION['id_usuario'])) {
                     <?php $con++; endforeach;?>
                 </tbody>
                 <tfoot>
-                <tr>
-                    <th>#</th>
-                    <th>Descrição</th>
-                    <th>Remetente</th>
-                    <th>Departamento</th>
-                    <th>Estado</th>
-                    <th>Prioridade</th>
-                    <th>Data de Emissão</th>
-                    <th>Data de Actualização</th>
-                </tr>
+                    <tr>
+                        <th>#</th>
+                        <th>Descrição</th>
+                        <th>Remetente</th>
+                        <th>Departamento</th>
+                        <th>Estado</th>
+                        <th>Prioridade</th>
+                        <th>Data de Emissão</th>
+                        <th>Data de Actualização</th>
+                    </tr>
                 </tfoot>
             </table>
             <br><br>
         </div>
     </div>
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"
         integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous">
-</script>
+    </script>
 
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
-</script>
+    </script>
 
     <script type="text/javascript">
     $(document).ready(function() {

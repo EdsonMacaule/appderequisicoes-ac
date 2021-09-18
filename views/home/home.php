@@ -384,7 +384,7 @@ if (!isset($_SESSION['id_usuario'])) {
             de Requisições
             (SGR)</h2>
         <br>
-        <p style="text-transform: lowercase; font-weight: normal;">Olá <?php echo $_SESSION['nome_usuario']; ?>, esta
+        <p style="text-transform: initial; font-weight: normal;">Olá <?php echo $_SESSION['nome_usuario']; ?>, esta
             janela reflete a todas Requisições feitas!</p>
         <!--Informando o nome do usuário logo que acessa o sistema-->
         <!--        <div class="col-md-5" id="outside">-->
@@ -412,7 +412,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <div class="icon" style="background-color: #d62839;border-radius: 5px; padding: 1mm; ">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle" viewBox="0 0 16 16"
-                                        style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
+                                        style="margin-left: 20px; padding-top: 5px; padding:3px;" color="#ffffff">
                                         <path
                                             d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
                                     </svg>
@@ -437,7 +437,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <div class="icon" style=" background-color: #ffd100; border-radius: 5px ;padding: 1mm;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle-half" viewBox="0 0 16 16"
-                                        style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
+                                        style="margin-left: 20px; padding-top: 5px; padding:2px;" color="#ffffff">
                                         <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
                                     </svg>
                                 </div>
@@ -461,7 +461,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <div class="icon" style=" background-color: #38b000; border-radius: 5px ;padding: 1mm;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-circle-fill" viewBox="0 0 16 16"
-                                        style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
+                                        style="margin-left: 20px; padding-top: 5px; padding:2px;" color="#ffffff">
                                         <circle cx="8" cy="8" r="8" />
                                     </svg>
                                 </div>
@@ -485,7 +485,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <div class="icon" style="background-color: #386fa4;border-radius: 5px;padding: 1mm;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-check2-all" viewBox="0 0 16 16"
-                                        style="margin-left: 20px; padding-top: 5px;" color="#ffffff">
+                                        style="margin-left: 20px; padding-top: 5px; padding:1px;" color="#ffffff">
                                         <path
                                             d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z" />
                                         <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z" />

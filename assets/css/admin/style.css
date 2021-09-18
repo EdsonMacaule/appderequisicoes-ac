@@ -37,7 +37,7 @@ div.container p {
 }
 div#requestmaster{
     width: 250px !important;
-    margin-left: 28% !important;
+    margin-left: 1% !important;
 }
 div#requestmaster .btn{
     width: 250px !important;
@@ -75,36 +75,37 @@ div.container button#allrequestmaster_button{
     div.col-lg-12 table {
         width: auto;
     }
-    div#req_star div#requestmaster{
+    /* div#req_star div#requestmaster{
         width: 220px;
-        margin-left: 80px;
+        margin-left: 1px;
         border-radius: 5px;
-    }
+    } */
     div#requestmaster{
-        width: 180px;
-        margin-left: 1%;
-        border-radius: 5px;
-        /*border: 2px solid red;*/
+        width: 180px !important;
+        margin-left: 1% !important;
+        border-radius: 5px !important;
+        /* border: 2px solid yellow; */
     }
-    div#requestmaster button#requestmaster_button{
+    button#requestmaster_button{
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important; ;
         width: 180px !important;
         font-size: 12pt;
         /*margin-left: -4% !important;*/
-        /*border: 1px solid red;*/
+        /* border: 1px solid red; */
     }
 
-    div.container button#allrequestmaster_button{
+    /* div.container button#allrequestmaster_button{
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
         width: 180px !important;
         margin-left: 4%;
         font-size: 10pt !important;
-        border: 1px solid red;
-    }
+        
+    } */
 
     div.container div#outside{
-        margin-left: 70% !important;
+        margin-left: 50% !important;
         width: 30% !important;
+        /* border: 1px solid red; */
     }
     div#outside a#sair_do {
         font-size: 12px !important;
@@ -132,15 +133,15 @@ div.container button#allrequestmaster_button{
         margin-left: 70%;
         /*border: 1px solid red;*/
     }
-    div#req_star div#requestmaster{
+    /* div#req_star div#requestmaster{ */
         /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 
-        width: 220px;
+        /* width: 220px; */
         /*padding-left: -20%;*/
-        border-radius: 10px;
+        /* border-radius: 10px; */
         /*border: 1px solid red;*/
-        margin-left: 0% !important;
-    }
+        /* margin-left: 0% !important; */
+    /* } */
     div#requestmaster{
         /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 
@@ -148,7 +149,7 @@ div.container button#allrequestmaster_button{
         /*padding-left: -20%;*/
         border-radius: 10px;
         /*border: 1px solid red;*/
-        margin-left: 26% !important;
+        margin-left: 1% !important;
     }
     div#requestmaster button#requestmaster_button{
         width: 200px !important ;
@@ -212,24 +213,24 @@ div.container button#allrequestmaster_button{
     div#requestmaster{
         /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
 
-        width: 330px;
-        /*padding-left: -20%;*/
+        width: 180px;
+        margin-left: 1%;
         border-radius: 10px;
         /*border: 1px solid red;*/
     }
-    div.container button#allrequestmaster_button{
+    /* div.container button#allrequestmaster_button{
         width: 180px !important;
         margin-left: 4% !important;
         font-size: 10pt !important;
-    }
+    } */
     div#requestmaster button#requestmaster_button{
         width: 180px !important;
         font-size: 10pt !important;
         text-align: center !important;
-        margin-left: 1% !important;
+        /* margin-left: 1% !important; */
     }
     div.container div#outside{
-        width: 25% !important;
+        width: 30% !important;
         margin-left: 70% !important;
     }
 

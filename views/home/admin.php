@@ -163,7 +163,7 @@ if (!isset($_SESSION['id_usuario'])) {
             margin-left: 1% !important;
         }
 
-        div.container button#allrequestmaster_button {
+        button#allrequestmaster_button {
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
             width: 180px !important;
             margin-left: 20% !important;
@@ -425,7 +425,7 @@ if (!isset($_SESSION['id_usuario'])) {
         <h2 class="center-text col-lg-pull-0" style="margin-top: 5%; text-align:center;">Sistema de Gestão de
             Requisições - Usuário</h2>
         <br>
-        <p style="text-transform: lowercase; font-weight: normal;">Olá <?php echo $_SESSION['nome_usuario']; ?>, Nesta
+        <p style="text-transform: initial; font-weight: normal;">Olá <?php echo $_SESSION['nome_usuario']; ?>, Nesta
             Janela tem suas requisições!</p>
         <!--Informando o nome do usuário logo que acessa o sistema-->
         <!--        <div class="col-md-5" id="outside">-->
@@ -527,7 +527,7 @@ if (!isset($_SESSION['id_usuario'])) {
                                 <div class="icon" style="background-color: #386fa4;border-radius: 5px;padding: 1mm;">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
                                         class="bi bi-check2-all" viewBox="0 0 16 16"
-                                        style="margin-left: 20px; padding-top: 5px; padding:2px;" color="#ffffff">
+                                        style="margin-left: 20px; padding-top: 5px; padding:1px;" color="#ffffff">
                                         <path
                                             d="M12.354 4.354a.5.5 0 0 0-.708-.708L5 10.293 1.854 7.146a.5.5 0 1 0-.708.708l3.5 3.5a.5.5 0 0 0 .708 0l7-7zm-4.208 7-.896-.897.707-.707.543.543 6.646-6.647a.5.5 0 0 1 .708.708l-7 7a.5.5 0 0 1-.708 0z" />
                                         <path d="m5.354 7.146.896.897-.707.707-.897-.896a.5.5 0 1 1 .708-.708z" />
